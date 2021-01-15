@@ -1,0 +1,36 @@
+<suite name="Suite">
+    <test name = "Settings">
+        <classes>
+            <class name="CROWN.CICOD.COM.Settings.THEME_AND_CONFIG"/>
+            <class name="CROWN.CICOD.COM.Settings.CREATEDELIVERYRATE"/>
+            <class name="CROWN.CICOD.COM.Settings.DELIVERY_RATE_CARD_EXIST_ALREADY"/>
+            <class name="CROWN.CICOD.COM.Settings.ReasonForRefund"/>
+            <class name="CROWN.CICOD.COM.Settings.SUSPEND_UNSUSPEND_TAX"/>
+            <class name="CROWN.CICOD.COM.Settings.SuspendUnsuspendDeliveryRate"/>
+            <class name="CROWN.CICOD.COM.Settings.UPDATE_TAX"/>
+            <class name="CROWN.CICOD.COM.Settings.UpdateDeliveryRate"/>
+            <class name="CROWN.CICOD.COM.Settings.UpdateReasonForRefund"/>
+            <class name="CROWN.CICOD.COM.Settings.SuspendUnsuspendReasonforRefund"/>
+        </classes>
+    </test>
+
+    <test name = "Administration">
+        <classes>
+            <class name="CROWN.CICOD.COM.Administration.ADD_ROLE"/>
+            <class name="CROWN.CICOD.COM.Administration.ADDUSER"/>
+            <class name="CROWN.CICOD.COM.Administration.DOWNLOAD_User"/>
+            <class name="CROWN.CICOD.COM.Administration.SUSPEND_UNSUSPEND_ROLE"/>
+            <class name="CROWN.CICOD.COM.Administration.UPDATE_ROLE"/>
+            <class name="CROWN.CICOD.COM.Administration.UPDATEUSER"/>
+        </classes>
+    </test>
+
+    <test name = "Loyalty">
+        <classes>
+            <class name="CROWN.CICOD.COM.Loyalty.CreateProductSpecificSpend"/>
+            <class name="CROWN.CICOD.COM.Loyalty.CreateValueSpecificSpend"/>
+            <class name="CROWN.CICOD.COM.Loyalty.Suspend_Unsuspend_PointSetUp"/>
+            <class name="CROWN.CICOD.COM.Loyalty.UpdatePointSetUp"/>
+        </classes>
+    </test>
+</suite>

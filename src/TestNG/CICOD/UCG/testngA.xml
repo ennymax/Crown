@@ -1,0 +1,20 @@
+<suite name="Suite">
+
+    <listeners>
+        <listener class-name="CROWN.Listeners.IExecutionlistener"></listener>
+        <listener class-name="CROWN.Listeners.RetryListener"></listener>
+    </listeners>
+
+    <test name = "UCG A">
+        <classes>
+            <class name="CROWN.CICOD.UCG.ViewAllCollection"/>
+
+        </classes>
+    </test>
+
+    <test name = "UCG B"  >
+        <classes>
+            <class name="CROWN.CICOD.UCG.LoginWithCorrectDetails"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,20 @@
+<suite name="Suite">
+    <test name = "EKEDC C" >
+        <classes>
+            <class name="CROWN.EKEDC.Raise_a_Complain_User_Not_Logged_In"/>
+            <class name="CROWN.EKEDC.Raise_A_Complaint_User_Logged_IN"/>
+            <class name="CROWN.EKEDC.Raise_A_Complaint_User_Multiple_Account"/>
+            <class name="CROWN.EKEDC.Registration"/>
+            <class name="CROWN.EKEDC.Registration_DPP"/>
+            <class name="CROWN.EKEDC.Registration_With_an_Existing_Selfcare_Account"/>
+            <class name="CROWN.EKEDC.Registration_with_incomplete_PhoneNumber"/>
+            <class name="CROWN.EKEDC.Registration_With_Matching_Password"/>
+            <class name="CROWN.EKEDC.Registration_With_Prospective_SelfCare_Account"/>
+            <class name="CROWN.EKEDC.Registration_with_Unmatching_Password"/>
+            <class name="CROWN.EKEDC.Remove_Account"/>
+            <class name="CROWN.EKEDC.Remove_Primary_Account"/>
+            <class name="CROWN.EKEDC.Reset_Password_Email"/>
+            <class name="CROWN.EKEDC.Reset_Password_Unregistered_Email"/>
+        </classes>
+    </test>
+</suite>

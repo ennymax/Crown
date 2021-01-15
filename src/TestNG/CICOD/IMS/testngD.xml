@@ -1,0 +1,19 @@
+<suite name="Suite">
+    <test name = "Parallel Tests" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <classes>
+            <class name="CROWN.CICOD.IMS.ManageRole.AddNewRole"/>
+            <class name="CROWN.CICOD.IMS.ManageRole.RemoveRole"/>
+            <class name="CROWN.CICOD.IMS.ManageRole.UpdateRole"/>
+            <class name="CROWN.CICOD.IMS.ManageRole.ViewRole"/>
+
+            <class name="CROWN.CICOD.IMS.ManageUsers.AddNewUser"/>
+            <class name="CROWN.CICOD.IMS.ManageUsers.DownloadLastUserLogin"/>
+            <class name="CROWN.CICOD.IMS.ManageUsers.DownloadUser"/>
+            <class name="CROWN.CICOD.IMS.ManageUsers.RemoveUser"/>
+            <class name="CROWN.CICOD.IMS.ManageUsers.UpdateUser"/>
+            <class name="CROWN.CICOD.IMS.ManageUsers.ViewUsers"/>
+            <class name="CROWN.CICOD.IMS.ManageUsers.RemoveUser"/>
+
+        </classes>
+    </test>
+</suite>
