@@ -99,7 +99,7 @@ public class UPDATE_TAX extends TestBase {
     }
 
 
-    @Description("Assert Tax Save ")
+    @Description("Assert Tax Save")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 11)
     public void AssertTaxSave() throws IOException, InterruptedException {
