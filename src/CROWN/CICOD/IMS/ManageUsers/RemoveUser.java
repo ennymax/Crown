@@ -42,7 +42,7 @@ public class RemoveUser extends TestBase {
         int resourcetype = rn.nextInt(7) + 1;
         int resourcelevel = rn.nextInt(6) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");
@@ -78,7 +78,7 @@ public class RemoveUser extends TestBase {
         JavascriptExecutor js77 = (JavascriptExecutor) driver;
         js77.executeScript("arguments[0].click();", element77);
 
-        login.AlertDismis();
+        login.AlertDismis(driver);
         Thread.sleep(2000);
 
         driver.quit();

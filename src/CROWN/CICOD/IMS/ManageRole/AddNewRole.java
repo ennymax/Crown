@@ -29,7 +29,7 @@ public class AddNewRole extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");

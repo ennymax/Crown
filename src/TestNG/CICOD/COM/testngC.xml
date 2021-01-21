@@ -1,35 +1,21 @@
-<suite name="Suite">
-    <test name = "Product Management">
-        <classes>
-            <class name="CROWN.CICOD.COM.ProductManagement.RemoveMultipleProductFromWebshop"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.SearchOffers"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.SUSPEND_UNSUSPEND_PRODUCTS"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.Suspend_UnsuspendOffers"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.UPDATE_PRODUCT"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.UpdateOfferSettings"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.UploadProduct"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.ADD_PRODUCT"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.AddMultipleProductToWebShop"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.CreateOfferSettings"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.PRODUCT_CATEGORY"/>
-            <class name="CROWN.CICOD.COM.ProductManagement.RemoveFromWebShop"/>
-        </classes>
-    </test>
 
-    <test name = "Account">
+<suite name="Suite">
+    <listeners>
+        <listener class-name="CROWN.Listeners.AllureListener"></listener>
+        <listener class-name="CROWN.Listeners.ISuitelistener"></listener>
+        <listener class-name="CROWN.Listeners.IExecutionlistener"></listener>
+        <listener class-name="CROWN.Listeners.RetryListener"></listener>
+    </listeners>
+
+    <test name="Create Credit Note" preserve-order="true">
         <classes>
-            <class name="CROWN.CICOD.COM.Account.CustomerAccount"/>
-            <class name="CROWN.CICOD.COM.Account.DownLoadCustomerAccount"/>
-            <class name="CROWN.CICOD.COM.Account.DownloadStatementOFAccount"/>
-            <class name="CROWN.CICOD.COM.Account.ViewCreditNote"/>
-            <class name="CROWN.CICOD.COM.Account.ViewStatementOfAccount"/>
             <class name="CROWN.CICOD.COM.Account.CreateCreditNote"/>
         </classes>
     </test>
-
-    <test name = "WorkShop Configuration">
+    <test name="Customer Account" preserve-order="true">
         <classes>
-            <class name="CROWN.CICOD.COM.WorkShopConfiguration.CarouselBanner"/>
+            <class name="CROWN.CICOD.COM.Account.CustomerAccount"/>
         </classes>
     </test>
 </suite>
+

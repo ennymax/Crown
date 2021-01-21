@@ -15,7 +15,7 @@ public class Add_Account_With_Valid_Billing_Postpaid extends TestBase {
     public void ADD_ACCOUNT_WITH_VALID_BILLING_POSTPAID() throws InterruptedException, IOException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();

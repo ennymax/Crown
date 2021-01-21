@@ -30,7 +30,7 @@ public class ScreenShot extends TestBase {
     private static final String OUTPUT_FOLDER = "./Screenshot/";
     private static final String FILE_NAME = "Screenshot" + System.currentTimeMillis() + ".png";
 
-    public void ScreenShotWebElement(String locator, int timeOut) throws IOException, InterruptedException {
+    public void ScreenShotWebElement(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Path path = Paths.get(OUTPUT_FOLDER);
         if (!Files.exists(path)) {
             try {
@@ -41,7 +41,7 @@ public class ScreenShot extends TestBase {
             }
         }
         Utility utility = new Utility(driver);
-        utility.DowaitForElementWithFluentWait(locator, timeOut);
+        utility.DowaitForElementWithFluentWait(driver, locator, timeOut);
         String extentReportImageqm11 =System.getProperty("user.dir") + OUTPUT_FOLDER + "System.currentTimeMillis()" + FILE_NAME;
         WebElement logo = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -81,10 +81,12 @@ public class ScreenShot extends TestBase {
                 e.printStackTrace();
             }
         }
+
+        try {
         Thread.sleep(1000);
         String extentReportImageqm11 = System.getProperty("user.dir") + OUTPUT_FOLDER + System.currentTimeMillis()+ FILE_NAME;
         File srcam11 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
+
             // now copy the screenshot to desired location using copyFile method
             FileUtils.copyFile(srcam11, new File(extentReportImageqm11));
             test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
@@ -107,37 +109,6 @@ public class ScreenShot extends TestBase {
         }
     }
 
-    public String getScreenshot() {
-        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
-        File destination = new File(path);
-        try {
-            FileUtils.copyFile(src, destination);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return path;
-    }
-
-    public String ScreenShotFullPageTestBase() throws IOException, InterruptedException {
-        Path path = Paths.get(OUTPUT_FOLDER);
-        // if directory exists?
-        if (!Files.exists(path)) {
-            try {
-                Files.createDirectories(path);
-            } catch (IOException e) {
-                // fail to create directory
-                e.printStackTrace();
-            }
-        }
-        Thread.sleep(1000);
-        String extentReportImageqm11 =System.getProperty("user.dir") + OUTPUT_FOLDER + System.currentTimeMillis()+FILE_NAME;
-        Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(),"PNG",new File(extentReportImageqm11));
-        test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
-        return extentReportImageqm11;
-    }
-
     public void ScreenShotFullPage() throws IOException, InterruptedException {
         Path path = Paths.get(OUTPUT_FOLDER);
         // if directory exists?
@@ -156,4 +127,17 @@ public class ScreenShot extends TestBase {
         test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
     }
 
+    public String getScreenshot(WebDriver driver) {
+        String src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+        File srcFile = new File(src);
+        String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
+        File destination = new File(path);
+        try {
+            FileUtils.copyFile(srcFile, destination);
+        } catch (IOException e) {
+            //LOGGER.error("some exception is coming while creating the screenshot");
+            e.printStackTrace();
+        }
+        return path;
+    }
 }

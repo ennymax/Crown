@@ -21,7 +21,7 @@ public class UpgradeSuscriptionOnFreeTrial extends TestBase {
         RavePay ravePay = new RavePay(driver);
         Login login = new Login(driver);
 
-        login.LoginUpgrade();
+        login.LoginUpgrade(driver);
 
         Thread.sleep(2000);
         WebElement element1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Billing1_XPATH"))));
@@ -49,7 +49,7 @@ public class UpgradeSuscriptionOnFreeTrial extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SubPayOnline_XPATH")))).click();
 
-        ravePay.RavePay1();
+        ravePay.RavePay1(driver);
 
         Thread.sleep(2000);
         WebElement msg =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("Assssss_XPATH"))));

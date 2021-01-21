@@ -27,7 +27,7 @@ public class RemoveRole extends TestBase {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");
@@ -60,9 +60,6 @@ public class RemoveRole extends TestBase {
         JavascriptExecutor jsuu = (JavascriptExecutor) driver;
         jsuu.executeScript("arguments[0].click();", elementuu);
 
-        login.AlertDismis();
-
-        driver.quit();
-        System.out.println("********************REMOVE ROLE********************");
+        login.AlertDismis(driver);
     }
 }

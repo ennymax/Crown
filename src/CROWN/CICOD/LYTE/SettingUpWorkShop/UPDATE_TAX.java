@@ -17,7 +17,7 @@ public class UPDATE_TAX extends TestBase {
     public void UPDATE_TAx() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();

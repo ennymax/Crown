@@ -14,7 +14,7 @@ public class AssertWorkOrderStatus extends TestBase {
     public void ASSERT_MANAGE_QUEUE() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

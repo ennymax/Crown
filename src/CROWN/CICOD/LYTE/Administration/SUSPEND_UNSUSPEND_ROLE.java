@@ -16,7 +16,7 @@ public class SUSPEND_UNSUSPEND_ROLE extends TestBase {
     public void SuspendRole() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();

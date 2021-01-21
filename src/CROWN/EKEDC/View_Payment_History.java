@@ -16,7 +16,7 @@ public class View_Payment_History extends TestBase {
     public void VIEW_PAYMENT_HISTORY() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PaymentHistory_XPATH"))).click();

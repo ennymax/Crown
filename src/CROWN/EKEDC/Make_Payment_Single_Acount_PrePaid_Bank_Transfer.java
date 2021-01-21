@@ -16,7 +16,7 @@ public class Make_Payment_Single_Acount_PrePaid_Bank_Transfer extends TestBase {
     public void MAKE_PAYMENT_SINGLE_ACCOUNT_BY_BANK_PREPAID() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPrePaidEKEDC();
+        login.LoginPrePaidEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("MakepAYMENTbtn_XPATH"))).click();

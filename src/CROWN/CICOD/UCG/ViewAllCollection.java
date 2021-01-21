@@ -17,7 +17,7 @@ public class ViewAllCollection extends TestBase {
     public void VIEW_ALL_COLLECTION() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();

@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.CustomerManagment;
 
 import CROWN.Base.TestBase;
+import CROWN.Listeners.InvokedMethodListeners;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Severity;
@@ -13,6 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -21,14 +23,21 @@ import java.security.SecureRandom;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+@Listeners(InvokedMethodListeners.class)
 public class Lodgment extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected ExcelUtil excelUtil = new ExcelUtil(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
     @Description("login")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Customer Order Management")
@@ -36,7 +45,7 @@ public class Lodgment extends TestBase {
     @Test(priority = 2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+        utility.DoclickWhenReady(driver,"com_XPATH", "comm_TEXT", 60);
     }
 
     @Description("Customer Management")
@@ -44,8 +53,8 @@ public class Lodgment extends TestBase {
     @Test(priority = 3)
     public void CustomerManagement() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("Customermanagmentbtn_XPATH", 20);
-        excelUtil.DoclickWhenReady("SelectCustomerbtn_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"Customermanagmentbtn_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"SelectCustomerbtn_XPATH", 20);
     }
 
     @Description("Action Button")
@@ -53,7 +62,7 @@ public class Lodgment extends TestBase {
     @Test(priority = 4)
     public void ActionButton() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("ActionSuspend_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"ActionSuspend_XPATH", 20);
     }
 
     @Description("View Customer")
@@ -61,7 +70,7 @@ public class Lodgment extends TestBase {
     @Test(priority = 5)
     public void ViewCustomer() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("VIEWCustomer_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"VIEWCustomer_XPATH", 20);
     }
 
     @Description("Assert View Customer")
@@ -69,7 +78,7 @@ public class Lodgment extends TestBase {
     @Test(priority = 6)
     public void AssertViewCustomer() throws IOException, InterruptedException, AWTException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertContainsWhenReady("AssertViewCustomer_XPATH", "as_TEXT", "asPass_TEXT", "asfailed_TEXT", 20);
+        assertion.DoAssertContainsWhenReady(driver,"AssertViewCustomer_XPATH", "as_TEXT", "asPass_TEXT", "asfailed_TEXT", 20);
     }
 
     @Description("Update Lodgment")
@@ -83,7 +92,7 @@ public class Lodgment extends TestBase {
 
         if ((driver.findElement(By.xpath(Utility.fetchLocator("ADDLOG_XPATH")))).isDisplayed()) {
             ExcelUtil excelUtil = new ExcelUtil(driver);
-            excelUtil.DoclickWhenReady("ADDLOG_XPATH", 20);
+            excelUtil.DoclickWhenReady(driver,"ADDLOG_XPATH", 20);
         }
 
         if ((driver.findElement(By.xpath(Utility.fetchLocator("UpateLodgenebt_XPATH")))).isDisplayed()) {
@@ -97,7 +106,7 @@ public class Lodgment extends TestBase {
             Thread.sleep(2000);
             driver.findElement(By.xpath(Utility.fetchLocator("UpdateBTNLOdgement_XPATH"))).click();
             Assertion assertion = new Assertion(driver);
-            assertion.DoAssertEqualWhenReady("AssertLodgment_XPATH", "ContLogment_TEXT", "contLodgmentpass_TEXT", "contLodgmentFail_TEXT", 20);
+            assertion.DoAssertEqualWhenReady(driver,"AssertLodgment_XPATH", "ContLogment_TEXT", "contLodgmentpass_TEXT", "contLodgmentFail_TEXT", 20);
 
         }
     }
@@ -107,7 +116,7 @@ public class Lodgment extends TestBase {
     @Test(priority = 9)
     public void AddLodgmentAmount() throws IOException, InterruptedException, AWTException {
         Utility utility = new Utility(driver);
-        utility.DosendKeysRandomNumberWhenReady("LodgementAmount_XPATH", 100000, 20);
+        utility.DosendKeysRandomNumberWhenReady(driver,"LodgementAmount_XPATH", 100000, 20);
     }
 
     @Description("Lodgment Date")
@@ -115,7 +124,7 @@ public class Lodgment extends TestBase {
     @Test(priority = 10)
     public void LodgmentDate() throws IOException, InterruptedException, AWTException {
         DatePicker datePicker = new DatePicker(driver);
-        datePicker.DatePickerJE("EnterDate_XPATH", "2020-10-1");
+        datePicker.DatePickerJE(driver,"EnterDate_XPATH", "2020-10-1");
     }
 
     @Description("Save Lodgment")
@@ -123,7 +132,7 @@ public class Lodgment extends TestBase {
     @Test(priority = 10)
     public void SaveLodgment() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("SaveLodgement_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"SaveLodgement_XPATH", 20);
     }
 
     @Description("Assert Lodgment")
@@ -131,6 +140,6 @@ public class Lodgment extends TestBase {
     @Test(priority = 11)
     public void AssertLodgment() throws IOException, InterruptedException, AWTException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertXpathPresentWhenReady("AssertLogement_XPATH", "Loggnepass_TEXT", "LodgmentFailed_TEXT", 20);
+        assertion.DoAssertXpathPresentWhenReady(driver,"AssertLogement_XPATH", "Loggnepass_TEXT", "LodgmentFailed_TEXT", 20);
     }
 }

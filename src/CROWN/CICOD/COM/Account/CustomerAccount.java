@@ -1,8 +1,8 @@
 package CROWN.CICOD.COM.Account;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.Utility;
+import CROWN.Listeners.InvokedMethodListeners;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import com.google.api.client.util.Lists;
 import io.qameta.allure.Severity;
@@ -19,14 +19,19 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.List;
 
+@Listeners(InvokedMethodListeners.class)
 public class CustomerAccount extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
     @Description("login")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority=1)
     public void login() throws IOException, InterruptedException {
-        Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Customer Order Management")

@@ -1,3 +1,4 @@
+
 <suite name="Suite">
     <listeners>
         <listener class-name="CROWN.Listeners.AllureListener"></listener>
@@ -5,38 +6,15 @@
         <listener class-name="CROWN.Listeners.IExecutionlistener"></listener>
         <listener class-name="CROWN.Listeners.RetryListener"></listener>
     </listeners>
-
-    <test name="Add Role" preserve-order="true">
-        <classes>
-            <class name="CROWN.CICOD.COM.Administration.ADD_ROLE"/>
-        </classes>
-    </test>
     <test name="Add User" preserve-order="true">
         <classes>
             <class name="CROWN.CICOD.COM.Administration.ADDUSER"/>
         </classes>
     </test>
-    <test name="Download User" preserve-order="true">
-        <classes>
-            <class name="CROWN.CICOD.COM.Administration.DOWNLOAD_User"/>
-        </classes>
-    </test>
-
-    <test name="Suspend_Unsuspend Role" preserve-order="true">
-    <classes>
-        <class name="CROWN.CICOD.COM.Administration.SUSPEND_UNSUSPEND_ROLE"/>
-    </classes>
-    </test>
-
-    <test name="Update Role" preserve-order="true">
-        <classes>
-            <class name="CROWN.CICOD.COM.Administration.UPDATE_ROLE"/>
-        </classes>
-    </test>
-
     <test name="Update User" preserve-order="true">
         <classes>
             <class name="CROWN.CICOD.COM.Administration.UPDATEUSER"/>
         </classes>
     </test>
 </suite>
+

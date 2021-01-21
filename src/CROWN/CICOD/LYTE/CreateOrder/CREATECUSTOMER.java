@@ -23,7 +23,7 @@ public class CREATECUSTOMER extends TestBase {
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(1000000) + 1;
 
-        login.LoginTestAccountSetUp();
+        login.LoginTestAccountSetUp(driver);
 
         //COM
         Thread.sleep(2000);

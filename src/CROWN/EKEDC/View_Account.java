@@ -14,7 +14,7 @@ public class View_Account extends TestBase {
     public void VIEW_ACCOUNT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2700);
         if (driver.findElements(By.xpath(Utility.fetchLocator("DashBoard_XPATH"))).size() != 0) {

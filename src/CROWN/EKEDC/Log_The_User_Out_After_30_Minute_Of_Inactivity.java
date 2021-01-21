@@ -15,11 +15,11 @@ public class Log_The_User_Out_After_30_Minute_Of_Inactivity extends TestBase {
         Login login = new Login(driver);
         Assertion assertion = new Assertion(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2100000);
         driver.navigate().refresh();
-        assertion.DoAssertXpathAbsentWhenReady("aaaaaaa_XPATH","BFPass_TEXT","BFFail_TEXT",30);
+        assertion.DoAssertXpathAbsentWhenReady(driver,"aaaaaaa_XPATH","BFPass_TEXT","BFFail_TEXT",30);
         Thread.sleep(2100000);
     }
 }

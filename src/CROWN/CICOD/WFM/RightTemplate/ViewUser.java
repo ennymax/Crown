@@ -16,13 +16,13 @@ public class ViewUser extends TestBase {
         Utility utility = new Utility(driver);
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
         Assertion assertion = new Assertion(driver);
-        login.LoginNexus();
+        login.LoginNexus(driver);
 
-        utility.DoclickWhenReady("Wfm_XPATH", "wfm_TEXT", 50);
-        utility.DoclickWhenReady("UserManagement_XPATH", "Usermgt_TEXT", 50);
-        utility.DoclickWhenReady("Usr_XPATH", "UsersBTN_TEXT", 50);
-        utility.DoclickWhenReady("EniActionButton_XPATH", "ActionBBTN_TEXT", 50);
-        javaScriptUtil.DoscrolltoViewClickWhenReady("viewUser_XPATH", "viewuser_TEXT", 40);
-        assertion.DoAssertXpathPresentWhenReady("pi_XPATH","Userpas_TEXT","userfail_TEXT",20);
+        utility.DoclickWhenReady(driver,"Wfm_XPATH", "wfm_TEXT", 50);
+        utility.DoclickWhenReady(driver,"UserManagement_XPATH", "Usermgt_TEXT", 50);
+        utility.DoclickWhenReady(driver,"Usr_XPATH", "UsersBTN_TEXT", 50);
+        utility.DoclickWhenReady(driver,"EniActionButton_XPATH", "ActionBBTN_TEXT", 50);
+        javaScriptUtil.DoscrolltoViewClickWhenReady(driver,"viewUser_XPATH", "viewuser_TEXT", 40);
+        assertion.DoAssertXpathPresentWhenReady(driver,"pi_XPATH","Userpas_TEXT","userfail_TEXT",20);
     }
 }

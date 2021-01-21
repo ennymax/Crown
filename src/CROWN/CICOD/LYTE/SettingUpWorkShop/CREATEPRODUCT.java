@@ -19,7 +19,7 @@ public class CREATEPRODUCT extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);

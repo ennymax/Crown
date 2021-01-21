@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.Loyalty;
 
 import CROWN.Base.TestBase;
+import CROWN.Listeners.InvokedMethodListeners;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Severity;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -19,14 +21,21 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.security.SecureRandom;
 
+@Listeners(InvokedMethodListeners.class)
 public class CreateProductSpecificSpend extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected ExcelUtil excelUtil = new ExcelUtil(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
     @Description("login")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Customer Order Management")
@@ -34,7 +43,7 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+        utility.DoclickWhenReady(driver,"com_XPATH", "comm_TEXT", 60);
     }
 
     @Description("Loyalty")
@@ -42,7 +51,7 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 3)
     public void Loyalty() throws IOException, InterruptedException {
         ExcelUtil util = new ExcelUtil(driver);
-        util.DoscrolltoViewClickWhenReady("LoyaltyBTN_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady(driver,"LoyaltyBTN_XPATH", 30);
     }
 
     @Description("Create Product Specific Spend")
@@ -50,7 +59,7 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 4)
     public void CreateProductSpecificSpend() throws IOException, InterruptedException {
         ExcelUtil util = new ExcelUtil(driver);
-        util.DoscrolltoViewClickWhenReady("CreateProductSpecificSpendBTN_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady(driver,"CreateProductSpecificSpendBTN_XPATH", 30);
     }
 
     @Description("Create Product Spend")
@@ -58,8 +67,8 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 5)
     public void CreateProductSpend() throws IOException, InterruptedException {
         ExcelUtil util = new ExcelUtil(driver);
-        util.DoscrolltoViewClickWhenReady("CreateProductSpe_XPATH", 30);
-        util.DoscrolltoViewClickWhenReady("cd_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady(driver,"CreateProductSpe_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady(driver,"cd_XPATH", 30);
     }
 
     @Description("Product Spend Name")
@@ -67,7 +76,7 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 6)
     public void ProductSpendName() throws IOException, InterruptedException, AWTException {
         DatePicker datePicker = new DatePicker(driver);
-        datePicker.DatePickerJE("Danny_XPATH","Tomatoes");
+        datePicker.DatePickerJE(driver,"Danny_XPATH","Tomatoes");
         Robot r = new Robot();
         Thread.sleep(2000);
         r.keyPress(KeyEvent.VK_ENTER);
@@ -79,7 +88,7 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 7)
     public void ProductSpendAmount() throws IOException, InterruptedException, AWTException {
         ExcelUtil util = new ExcelUtil(driver);
-        util.DosendKeysRandomNumberWhenReady("A_XPATH", 1000000000, 20);
+        util.DosendKeysRandomNumberWhenReady(driver,"A_XPATH", 1000000000, 20);
     }
 
     @Description("EE")
@@ -99,7 +108,7 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 9)
     public void Period() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoSelectValuesByIndex("Period_XPATH", 1, 20);
+        excelUtil.DoSelectValuesByIndex(driver,"Period_XPATH", 1, 20);
     }
 
     @Description("Save Product Specific Spend")
@@ -107,7 +116,7 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 10)
     public void SaveProductSpecificSpend() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("SaveCreateProductSpecificSpend_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"SaveCreateProductSpecificSpend_XPATH", 20);
     }
 
     @Description("Assert Save Product Specific Spend")
@@ -115,6 +124,6 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test(priority = 11)
     public void AssertSaveProductSpecificSpend() throws IOException, InterruptedException, AWTException {
         Assertion assertion= new Assertion(driver);
-        assertion.DoAssertContainsWhenReady("AssertCreateProductSpecificSpend_TEXT","AssertCreateProductSpecificSpendcont_TEXT","AssertCreateProductSpecificSpendPass_TEXT","AssertCreateProductSpecificSpendfail_TEXT",20);
+        assertion.DoAssertContainsWhenReady(driver,"AssertCreateProductSpecificSpend_TEXT","AssertCreateProductSpecificSpendcont_TEXT","AssertCreateProductSpecificSpendPass_TEXT","AssertCreateProductSpecificSpendfail_TEXT",20);
     }
 }

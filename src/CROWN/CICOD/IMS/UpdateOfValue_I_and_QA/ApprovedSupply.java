@@ -31,7 +31,7 @@ public class ApprovedSupply extends TestBase {
         int role = rn.nextInt(11) + 1;
         int role1 = rn.nextInt(10) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");

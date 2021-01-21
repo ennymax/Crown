@@ -23,7 +23,7 @@ public class Suspend_UnsuspendCategory extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successfull");
@@ -43,7 +43,7 @@ public class Suspend_UnsuspendCategory extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SuspendCategoryBTN_XPATH"))).click();
 
-        login.AcceptAlert();
+        login.AcceptAlert(driver);
 
         Thread.sleep(1500);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertManageSupplierCreation_XPATH"))).size() != 0) {
@@ -57,7 +57,7 @@ public class Suspend_UnsuspendCategory extends TestBase {
 
         driver.findElement(By.xpath(Utility.fetchLocator("UnsuspendCategory_XPATH"))).click();
 
-        login.AcceptAlert();
+        login.AcceptAlert(driver);
 
         Thread.sleep(1500);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertManageSupplierCreation_XPATH"))).size() != 0) {
@@ -65,8 +65,5 @@ public class Suspend_UnsuspendCategory extends TestBase {
         } else {
             test.log(Status.FAIL, "Category suspension failed");
         }
-
-        driver.quit();
-        System.out.println("********************SUSPEND UNSUSPEND INVENTORY CATEGORY********************");
     }
 }

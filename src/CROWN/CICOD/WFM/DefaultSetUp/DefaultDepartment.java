@@ -14,7 +14,7 @@ public class DefaultDepartment extends TestBase {
     public void DEFAULT_TEAMS() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginDef1();
+        login.LoginDef1(driver);
 
         Thread.sleep(200);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

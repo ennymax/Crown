@@ -15,7 +15,7 @@ public class MakePayment_Logged_In_User_Prepaid extends TestBase {
     public void MAKE_PAYMENT_LOGGED_IN_USER_PREPAID() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPrePaidEKEDC();
+        login.LoginPrePaidEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("MakepAYMENTbtn_XPATH"))).click();

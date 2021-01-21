@@ -21,11 +21,6 @@ public class DownloadLastUserLogin extends TestBase {
 
     @Test
     public void DOWNLOAD_LAST_USERS_LOGIN() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD LAST USERS LOGIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Randomstuff ramdomwords = new Randomstuff();
@@ -40,7 +35,7 @@ public class DownloadLastUserLogin extends TestBase {
         int resourcetype = rn.nextInt(7) + 1;
         int resourcelevel = rn.nextInt(6) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");

@@ -27,7 +27,7 @@ public class RemoveStore extends TestBase {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");
@@ -60,9 +60,6 @@ public class RemoveStore extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("StoreActionBTN_XPATH"))).click();
         driver.findElement(By.xpath(Utility.fetchLocator("StoreDeleteBTN_XPATH"))).click();
 
-        login.AlertDismis();
-
-        driver.quit();
-        System.out.println("********************REMOVE STORE********************");
+        login.AlertDismis(driver);
     }
 }

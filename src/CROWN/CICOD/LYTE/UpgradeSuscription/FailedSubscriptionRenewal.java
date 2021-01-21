@@ -22,7 +22,7 @@ public class FailedSubscriptionRenewal extends TestBase {
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
-        login.LoginUpgrade();
+        login.LoginUpgrade(driver);
 
         Thread.sleep(2000);
         WebElement element1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Billing1_XPATH"))));
@@ -50,12 +50,12 @@ public class FailedSubscriptionRenewal extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SubPayOnline_XPATH")))).click();
 
-        ravePay.RavePay1();
+        ravePay.RavePay1(driver);
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("CloseFluterWave_XPATH")))).click();
 
-        utility.DowaitandAcceptAlerwhenReady(60);
+        utility.DowaitandAcceptAlerwhenReady(driver,60);
 
         Thread.sleep(2000);
         driver.switchTo().defaultContent();

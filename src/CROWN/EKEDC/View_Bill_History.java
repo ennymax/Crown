@@ -13,7 +13,7 @@ public class View_Bill_History extends TestBase {
     public void VIEW_BILLS_HISTORY() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("Account_XPATH"))).click();
         driver.findElement(By.xpath(Utility.fetchLocator("BillHistory_XPATH"))).click();

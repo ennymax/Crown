@@ -20,7 +20,7 @@ public class Pay_By_Bank_Transfer extends TestBase {
     public void Pay_by_bank_transfer() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginUpgrade();
+        login.LoginUpgrade(driver);
 
         Thread.sleep(2000);
         WebElement element1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Billing1_XPATH"))));

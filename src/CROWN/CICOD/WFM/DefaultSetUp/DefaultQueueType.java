@@ -15,7 +15,7 @@ public class DefaultQueueType extends TestBase {
     public void DEFAULT_QUEUE_TYPE() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginDef1();
+        login.LoginDef1(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

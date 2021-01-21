@@ -3,6 +3,7 @@ package CROWN.utility;
 import CROWN.Base.TestBase;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 public class FileUpload extends TestBase {
 
-    public void UploadCarouselBanner() throws IOException, InterruptedException, AWTException {
+    public void UploadCarouselBanner(WebDriver driver) throws IOException, InterruptedException, AWTException {
 
         String fileAbsolutePath = System.getProperty("user.dir") + "\\Config\\cicodimg.jpg";
         StringSelection clipBoardPath = new StringSelection(fileAbsolutePath);
@@ -41,7 +42,7 @@ public class FileUpload extends TestBase {
     }
 
 
-    public void UploadXLSX1() throws IOException, InterruptedException, AWTException {
+    public void UploadXLSX1(WebDriver driver) throws IOException, InterruptedException, AWTException {
 
         String fileAbsolutePath = System.getProperty("user.dir") + "\\Config\\customer_template1.xlsx";
         StringSelection clipBoardPath = new StringSelection(fileAbsolutePath);
@@ -68,7 +69,8 @@ public class FileUpload extends TestBase {
             System.out.println("An Error Occur but Test will continue");
         }
     }
-    public void UploadFileImage3MB() throws IOException, InterruptedException, AWTException {
+
+    public void UploadFileImage3MB(WebDriver driver) throws IOException, InterruptedException, AWTException {
 
         String fileAbsolutePath = System.getProperty("user.dir") + "\\Config\\cicodkb.jpg";
         StringSelection clipBoardPath = new StringSelection(fileAbsolutePath);
@@ -98,7 +100,7 @@ public class FileUpload extends TestBase {
     }
 
 
-    public void UploadXLSX() throws IOException, InterruptedException, AWTException {
+    public void UploadXLSX(WebDriver driver) throws IOException, InterruptedException, AWTException {
 
         String fileAbsolutePath = System.getProperty("user.dir") + "\\Config\\product_template.xlsx";
         StringSelection clipBoardPath = new StringSelection(fileAbsolutePath);
@@ -126,7 +128,7 @@ public class FileUpload extends TestBase {
         }
     }
 
-    public void UploadPDF() throws IOException, InterruptedException, AWTException {
+    public void UploadPDF(WebDriver driver) throws IOException, InterruptedException, AWTException {
 
         String fileAbsolutePath = "C:\\Users\\Ennymax\\Music\\01 Praises.mp3";
         StringSelection clipBoardPath = new StringSelection(fileAbsolutePath);
@@ -153,6 +155,4 @@ public class FileUpload extends TestBase {
             System.out.println("An Error Occur but Test will continue");
         }
     }
-
-
 }

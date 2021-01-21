@@ -17,15 +17,13 @@ public class ISuitelistener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         passedtests.add(result.getMethod());
-        System.out.println("***************************Passed********************* " + (result.getMethod().getMethodName() + " ********************Passed******************"));
-        System.out.println("***************************Passed********************* " + getTime(result.getEndMillis()) + " ********************Passed****************** \n");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         failedtests.add(result.getMethod());
-        System.out.println("***************************Failed********************* " + (result.getMethod().getMethodName() + " ********************Failed******************"));
-        System.out.println("***************************Failed********************* " + getTime(result.getEndMillis()) + " ********************Failed****************** \n");
+       // System.out.println("***************************Failed********************* " + (result.getMethod().getMethodName() + " ********************Failed******************"));
+        //System.out.println("***************************Failed********************* " + getTime(result.getEndMillis()) + " ********************Failed****************** \n");
     }
 
     @Override
@@ -66,7 +64,7 @@ public class ISuitelistener implements ITestListener {
     public void onTestStart(ITestResult result) {
     }
 
-    private Date getTime(long millis) {
+    public Date getTime(long millis) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(millis);
         return calendar.getTime();

@@ -14,7 +14,7 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
     public void CREATE_ORDER_FROM_EXISTING_CUSTOMERS() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         Thread.sleep(2000);

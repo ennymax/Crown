@@ -22,7 +22,7 @@ public class RemoveSuppplier extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successfull");
@@ -39,10 +39,7 @@ public class RemoveSuppplier extends TestBase {
         Thread.sleep(1000);
         driver.findElement(By.xpath(Utility.fetchLocator("RemoveSupplierBTN_XPATH"))).click();
 
-        login.AlertDismis();
-
-        driver.quit();
-        System.out.println("********************REMOVE SUPPLIER********************");
+        login.AlertDismis(driver);
     }
 
 }

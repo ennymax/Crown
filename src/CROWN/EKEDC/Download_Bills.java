@@ -13,7 +13,7 @@ public class Download_Bills extends TestBase {
     public void Download_Bills() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("ViewBill_XPATH"))).click();
     }

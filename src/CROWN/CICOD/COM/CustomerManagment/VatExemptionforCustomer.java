@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.CustomerManagment;
 
 import CROWN.Base.TestBase;
+import CROWN.Listeners.InvokedMethodListeners;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Severity;
@@ -10,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -18,14 +20,21 @@ import java.security.SecureRandom;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+@Listeners(InvokedMethodListeners.class)
 public class VatExemptionforCustomer extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected ExcelUtil excelUtil = new ExcelUtil(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
     @Description("login")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Customer Order Management")
@@ -33,7 +42,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+        utility.DoclickWhenReady(driver,"com_XPATH", "comm_TEXT", 60);
     }
 
     @Description("Customer Management")
@@ -41,8 +50,8 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 3)
     public void CustomerManagement() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("Customermanagmentbtn_XPATH", 20);
-        excelUtil.DoclickWhenReady("SelectCustomerbtn_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"Customermanagmentbtn_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"SelectCustomerbtn_XPATH", 20);
     }
 
     @Description("Action Button")
@@ -50,7 +59,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 4)
     public void ActionButton() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("ActionSuspend_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"ActionSuspend_XPATH", 20);
     }
 
     @Description("Update customer")
@@ -58,7 +67,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 5)
     public void UpdateCustomer() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("UpdateCustoo_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"UpdateCustoo_XPATH", 20);
     }
 
     @Description("Enable VAT Exemption")
@@ -66,7 +75,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 6)
     public void EnableVatExemption() throws IOException, InterruptedException, AWTException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoCheckBoxSelected("EnableVatExemption_XPATH","VatPaa_TEXT","VatPaa_TEXT",20);
+        assertion.DoCheckBoxSelected(driver,"EnableVatExemption_XPATH","VatPaa_TEXT","VatPaa_TEXT",20);
     }
 
     @Description("Assert Free Delivery")
@@ -74,7 +83,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 8)
     public void AssertFreeDelivery() throws IOException, InterruptedException, AWTException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoCheckBoxSelected("EnableFreeDeliv_XPATH", "VatPaa_TEXT", "VatPaa_TEXT", 20);
+        assertion.DoCheckBoxSelected(driver,"EnableFreeDeliv_XPATH", "VatPaa_TEXT", "VatPaa_TEXT", 20);
     }
 
     @Description("Enable VAT Exemption")
@@ -82,7 +91,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 9)
     public void EnableVATExemption() throws IOException, InterruptedException, AWTException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoCheckBoxSelected("EnableVatExemption_XPATH", "VatEx_TEXT", "VatEx_TEXT", 20);
+        assertion.DoCheckBoxSelected(driver,"EnableVatExemption_XPATH", "VatEx_TEXT", "VatEx_TEXT", 20);
     }
 
     @Description("House Address")
@@ -90,9 +99,9 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 10)
     public void HouseAddress() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DosendKeysRandomListwordsWhenReady("Houshhh_XPATH", 20);
-        excelUtil.DosendKeysRandomListwordsWhenReady("Strrrr_XPATH", 20);
-        excelUtil.DosendKeysRandomListwordsWhenReady("cLan_XPATH", 20);
+        excelUtil.DosendKeysRandomListwordsWhenReady(driver,"Houshhh_XPATH", 20);
+        excelUtil.DosendKeysRandomListwordsWhenReady(driver,"Strrrr_XPATH", 20);
+        excelUtil.DosendKeysRandomListwordsWhenReady(driver,"cLan_XPATH", 20);
     }
 
     @Description("Customer Delivery Details")
@@ -100,9 +109,9 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 11)
     public void CustomerDeliveryDetails() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoSelectValuesByVisibleText("Country_XPATH", "Country_TEXT", 20);
-        excelUtil.DoSelectValuesByVisibleText("Cstate_XPATH", "State_TEXT", 20);
-        excelUtil.DoSelectValuesByVisibleText("Clga_XPATH", "LGA_TEXT", 20);
+        excelUtil.DoSelectValuesByVisibleText(driver,"Country_XPATH", "Country_TEXT", 20);
+        excelUtil.DoSelectValuesByVisibleText(driver,"Cstate_XPATH", "State_TEXT", 20);
+        excelUtil.DoSelectValuesByVisibleText(driver,"Clga_XPATH", "LGA_TEXT", 20);
     }
 
     @Description("Save")
@@ -110,7 +119,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 13)
     public void UpdateButton() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("Csave_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"Csave_XPATH", 20);
     }
 
     @Description("Assert Update Customer")
@@ -118,7 +127,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 14)
     public void AssertUpdateCustomer() throws IOException, InterruptedException, AWTException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertContainsWhenReady("cccg_XPATH", "mi_TEXT", "M1Pass_TEXT", "m1fail_TEXT", 20);
+        assertion.DoAssertContainsWhenReady(driver,"cccg_XPATH", "mi_TEXT", "M1Pass_TEXT", "m1fail_TEXT", 20);
     }
 
     @Description("Update Customer Button")
@@ -126,7 +135,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 15)
     public void UpdateCustomerButton() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("CreatV_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"CreatV_XPATH", 20);
     }
 
     @Description("Search Product")
@@ -134,7 +143,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 16)
     public void SearchProduct() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoSendKeysWhenReady("SearchProductinput_XPATH", "ID_TEXT", 20);
+        excelUtil.DoSendKeysWhenReady(driver,"SearchProductinput_XPATH", "ID_TEXT", 20);
     }
 
     @Description("Search Product Button")
@@ -142,7 +151,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 17)
     public void SearchProductButton() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("SearchProductbtnq_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"SearchProductbtnq_XPATH", 20);
     }
 
     @Description("Add Product To Cart")
@@ -150,7 +159,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 18)
     public void AddProductToCart() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("AddBTN_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"AddBTN_XPATH", 20);
     }
 
     @Description("Select Region")
@@ -158,8 +167,8 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 21)
     public void SelectRegion() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("jjregion_XPATH",20);
-        excelUtil.DoSelectValuesByIndexRandom("SelectRegion_XPATH",4,20);
+        excelUtil.DoclickWhenReady(driver,"jjregion_XPATH",20);
+        excelUtil.DoSelectValuesByIndexRandom(driver,"SelectRegion_XPATH",4,20);
     }
 
     @Description("Make Payment")
@@ -167,7 +176,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 22)
     public void MakePayment() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("MakePayment_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"MakePayment_XPATH", 20);
     }
 
     @Description("Pay Online")
@@ -175,7 +184,7 @@ public class VatExemptionforCustomer extends TestBase {
     @Test(priority = 23)
     public void PayOnline() throws IOException, InterruptedException, AWTException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickWhenReady("PayOnline_XPATH", 20);
+        excelUtil.DoscrolltoViewClickWhenReady(driver,"PayOnline_XPATH", 20);
     }
 
     @Description("Assert VAT Exemption For Customer")

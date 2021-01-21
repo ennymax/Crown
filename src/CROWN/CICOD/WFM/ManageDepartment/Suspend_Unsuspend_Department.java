@@ -17,7 +17,7 @@ public class Suspend_Unsuspend_Department extends TestBase {
     public void Suspend_Unsuspend_Department() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
@@ -34,7 +34,7 @@ public class Suspend_Unsuspend_Department extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("susdep_XPATH"))).click();
 
-        login.AcceptAlert();
+        login.AcceptAlert(driver);
 
         Thread.sleep(2000);
         WebElement msg = (new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("Assertsuspdep_XPATH"))));
@@ -53,7 +53,7 @@ public class Suspend_Unsuspend_Department extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("unsuspenddep_XPATH"))).click();
 
-        login.AcceptAlert();
+        login.AcceptAlert(driver);
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("dptOkBTN_XPATH"))).click();

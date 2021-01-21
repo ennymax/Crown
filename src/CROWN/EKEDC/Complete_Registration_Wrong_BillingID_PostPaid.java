@@ -14,7 +14,7 @@ public class Complete_Registration_Wrong_BillingID_PostPaid extends TestBase {
     public void COMPLETE_REG_WRONG_BILLING_POSTPAID() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.Login_PostPaidLandlordEKEDC();
+        login.Login_PostPaidLandlordEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AccountNumberEKE_XPATH"))).sendKeys(Utility.fetchLocator("WrongAccountNumber_TEXT"));

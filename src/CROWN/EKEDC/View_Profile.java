@@ -13,7 +13,7 @@ public class View_Profile extends TestBase {
     public void VIEW_PROFILE() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("ProfileBTN_XPATH"))).click();
 

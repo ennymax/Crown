@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.Administration;
 
 import CROWN.Base.TestBase;
+import CROWN.Listeners.InvokedMethodListeners;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Severity;
@@ -9,27 +10,35 @@ import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.io.IOException;
 
+@Listeners(InvokedMethodListeners.class)
 public class ADD_ROLE extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected ExcelUtil excelUtil = new ExcelUtil(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+    protected ClickAll clickAll = new ClickAll(driver);
+    protected ScreenShot screenShot = new ScreenShot(driver);
 
     @Description("login")
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
-        Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Customer Order Management")
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+        utility.DoclickWhenReady(driver,"com_XPATH", "comm_TEXT", 60);
     }
 
     @Description("Administration Module")
@@ -69,10 +78,8 @@ public class ADD_ROLE extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 7)
     public void ClickAll() throws IOException, InterruptedException, AWTException {
-        ClickAll clickAll = new ClickAll(driver);
-        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
         javaScriptUtil.DoZoomPercentage(20);
-        clickAll.ClickAll("aa_CLASS");
+        clickAll.ClickAll(driver,"aa_CLASS");
     }
 
     @Description("Add Button")
@@ -80,7 +87,6 @@ public class ADD_ROLE extends TestBase {
     @Test(priority = 8)
     public void AddButton() throws IOException, InterruptedException, AWTException {
         Thread.sleep(2000);
-        ScreenShot screenShot = new ScreenShot(driver);
         screenShot.ScreenShotFullPage();
         driver.findElement(By.xpath(Utility.fetchLocator("Roleaa_XPATH"))).click();
     }

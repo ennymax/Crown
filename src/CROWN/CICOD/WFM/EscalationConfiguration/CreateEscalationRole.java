@@ -19,7 +19,7 @@ public class CreateEscalationRole extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
 

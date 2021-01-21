@@ -17,7 +17,7 @@ public class ReprintRecipt extends TestBase {
     public void REPRINT_RECEIPT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();

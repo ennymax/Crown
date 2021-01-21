@@ -27,7 +27,7 @@ public class NewInventryCategory extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomWords = new Randomstuff();
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");

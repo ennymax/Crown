@@ -17,7 +17,7 @@ public class Remove_Account extends TestBase {
     public void REMOVE_ACCOUNT() throws InterruptedException, IOException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();
         driver.findElement(By.xpath(Utility.fetchLocator("ManageAccountBTN_XPATH"))).click();

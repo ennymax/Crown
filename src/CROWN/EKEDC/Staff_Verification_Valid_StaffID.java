@@ -15,7 +15,7 @@ public class Staff_Verification_Valid_StaffID extends TestBase {
     public void STAFF_VERIFICATION_VALID_STAFF() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("NavigatetoHomepageBTN_XPATH"))).click();

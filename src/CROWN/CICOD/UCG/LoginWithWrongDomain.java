@@ -15,7 +15,7 @@ public class LoginWithWrongDomain extends TestBase {
     public void LOGIN_WITH_WRONG_DOMAIN() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginWrongDomainName();
+        login.LoginWrongDomainName(driver);
 
         Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertInvalidEmailOrPassword_XPATH"))).size() != 0) {

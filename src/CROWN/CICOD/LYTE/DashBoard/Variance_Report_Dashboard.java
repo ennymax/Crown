@@ -16,7 +16,7 @@ public class Variance_Report_Dashboard extends TestBase {
     public void VARIANCE_REPORT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         Thread.sleep(2000);

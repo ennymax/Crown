@@ -18,7 +18,7 @@ public class Suspend_UnsuspendRightTemplate extends TestBase {
     public void SUSPEND_UNSUSPEND_RIGHT_TEMPLATE() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

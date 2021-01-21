@@ -54,6 +54,9 @@ public class IExecutionlistener extends ISuitelistener implements IExecutionList
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        AllureListener allureListener = new AllureListener();
+        allureListener.attachHtml("Html attach");
     }
 
     public void SendReport(String RecipientEmail, int f, int k, int t) throws IOException {

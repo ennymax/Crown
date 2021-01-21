@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.ProductManagement;
 
 import CROWN.Base.TestBase;
+import CROWN.Listeners.InvokedMethodListeners;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Severity;
@@ -11,19 +12,27 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.io.IOException;
 
+@Listeners(InvokedMethodListeners.class)
 public class PRODUCT_CATEGORY extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected ExcelUtil excelUtil = new ExcelUtil(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
     @Description("login")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Customer Order Management")
@@ -31,7 +40,7 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test(priority = 2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+        utility.DoclickWhenReady(driver,"com_XPATH", "comm_TEXT", 60);
     }
 
     @Description("Product Management")
@@ -39,7 +48,7 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test(priority = 3)
     public void ProductManagement() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("ProductManagementbtn_XPATH", "ProductManagementbtn_XPATH", 60);
+        utility.DoclickWhenReady(driver,"ProductManagementbtn_XPATH", "ProductManagementbtn_XPATH", 60);
     }
 
     @Description("product Category")
@@ -47,7 +56,7 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test(priority = 4)
     public void productCategory() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("productCategory_XPATH", "productCategory_XPATH", 60);
+        utility.DoclickWhenReady(driver,"productCategory_XPATH", "productCategory_XPATH", 60);
     }
 
     @Description("Add Product")
@@ -55,7 +64,7 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test(priority = 5)
     public void AddProduct() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("AddProductbtn_XPATH", "AddProductbtn_XPATH", 60);
+        utility.DoclickWhenReady(driver,"AddProductbtn_XPATH", "AddProductbtn_XPATH", 60);
     }
 
     @Description("Product Name")
@@ -63,7 +72,7 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test(priority = 6)
     public void ProductName() throws IOException, InterruptedException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DosendKeysRandomListwordsWhenReady("ProductName_XPATH", 20);
+        excelUtil.DosendKeysRandomListwordsWhenReady(driver,"ProductName_XPATH", 20);
     }
 
     @Description("Product Discription")
@@ -71,7 +80,7 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test(priority = 7)
     public void ProductDiscription() throws IOException, InterruptedException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoSendKeysWhenReady("ProductDiscription_XPATH", "ProductDiscription_TEXT", 20);
+        excelUtil.DoSendKeysWhenReady(driver,"ProductDiscription_XPATH", "ProductDiscription_TEXT", 20);
     }
 
     @Description("IMG")
@@ -83,7 +92,7 @@ public class PRODUCT_CATEGORY extends TestBase {
         builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
 
         Thread.sleep(4000);
-        fileUpload.UploadFileImage3MB();
+        fileUpload.UploadFileImage3MB(driver);
     }
 
     @Description("Save")
@@ -91,14 +100,14 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test(priority = 9)
     public void Save() throws IOException, InterruptedException {
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoclickWhenReady("savvbtn_XPATH", 20);
+        excelUtil.DoclickWhenReady(driver,"savvbtn_XPATH", 20);
     }
 
-    @Description("Assert Save")
+    @Description("Assert Create Product Category")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 10)
-    public void AssertSave() throws IOException, InterruptedException {
+    public void AssertProductCat() throws IOException, InterruptedException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertContainsWhenReady("AssertProductCate_XPATH", "catsacant_TEXT", "catsacantPass_TEXT", "catsacantFail_TEXT", 20);
+        assertion.DoAssertContainsWhenReady(driver,"AssertProductCate_XPATH", "catsacant_TEXT", "catsacantPass_TEXT", "catsacantFail_TEXT", 20);
     }
 }

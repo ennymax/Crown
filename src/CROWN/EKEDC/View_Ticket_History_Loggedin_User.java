@@ -14,7 +14,7 @@ public class View_Ticket_History_Loggedin_User extends TestBase {
     public void VIEW_TICKET_HISTORY_LOGGED_IN_USER() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("ComplaintsBTN_XPATH"))).click();
 

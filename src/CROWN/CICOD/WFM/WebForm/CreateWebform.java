@@ -21,7 +21,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Access WFM")
@@ -29,7 +29,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 2)
     public void WorkFlowManager() throws IOException, InterruptedException {
         ExcelUtil util = new ExcelUtil(driver);
-        util.DoscrolltoViewClickWhenReady("Wfm_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady(driver,"Wfm_XPATH", 30);
     }
 
     @Description("Assert Successful Access of WFM")
@@ -37,7 +37,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 3)
     public void AssertWorkFlowManager() throws IOException, InterruptedException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertXpathAbsentWhenReady("wfmConfig_XPATH", "EscalationPass_TEXT", "EscalationFailed_TEXT", 30);
+        assertion.DoAssertXpathAbsentWhenReady(driver,"wfmConfig_XPATH", "EscalationPass_TEXT", "EscalationFailed_TEXT", 30);
     }
 
     @Description("Access Configuration")
@@ -45,7 +45,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 4)
     public void AccessConfiguration() throws IOException, InterruptedException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoClickActionclassWhenReady("wfmConfig_XPATH", 30);
+        actionsClass.DoClickActionclassWhenReady(driver,"wfmConfig_XPATH", 30);
     }
 
     @Description("Assert Webform and WorkOrder Extension")
@@ -53,8 +53,8 @@ public class CreateWebform extends TestBase {
     @Test(priority = 5)
     public void AssertWebForm_WorkOrderExtension() throws IOException, InterruptedException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertXpathAbsentWhenReady("webform_XPATH", "WebPass_Text", "WebFailed_Text", 30);
-        assertion.DoAssertXpathAbsentWhenReady("ExtendedWorkOrder_XPATH", "ExtendedPass_Text", "ExtendedFailed_Text", 30);
+        assertion.DoAssertXpathAbsentWhenReady(driver,"webform_XPATH", "WebPass_Text", "WebFailed_Text", 30);
+        assertion.DoAssertXpathAbsentWhenReady(driver,"ExtendedWorkOrder_XPATH", "ExtendedPass_Text", "ExtendedFailed_Text", 30);
     }
 
     @Description("Access WebForm")
@@ -62,7 +62,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 6)
     public void Accesswebform() throws IOException, InterruptedException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoClickActionclassWhenReady("webform_XPATH", 30);
+        actionsClass.DoClickActionclassWhenReady(driver,"webform_XPATH", 30);
     }
 
     @Description("Create Web Form")
@@ -70,7 +70,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 7)
     public void CreateWebform() throws IOException, InterruptedException {
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
-        javaScriptUtil.DoClickWhenReadyJS("CreateWebF_XPATH", 30);
+        javaScriptUtil.DoClickWhenReadyJS(driver,"CreateWebF_XPATH", 30);
     }
 
     @Description("Create Web Form")
@@ -79,7 +79,7 @@ public class CreateWebform extends TestBase {
     public void Webform_Name() throws IOException, InterruptedException {
         ActionsClass actionsClass = new ActionsClass(driver);
         Thread.sleep(5000);
-        actionsClass.DoActionsSendKeysRandomListword("WebFormName_XPATH", 30);
+        actionsClass.DoActionsSendKeysRandomListword(driver,"WebFormName_XPATH", 30);
     }
 
     @Description("Create Web Form Banner")
@@ -88,8 +88,8 @@ public class CreateWebform extends TestBase {
     public void Webform_Banner() throws IOException, InterruptedException, AWTException {
         FileUpload fileUpload = new FileUpload();
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoActionsSendKeysRandomListword("WebformBanner_XPATH", 30);
-        fileUpload.UploadFileImage3MB();
+        actionsClass.DoActionsSendKeysRandomListword(driver,"WebformBanner_XPATH", 30);
+        fileUpload.UploadFileImage3MB(driver);
     }
 
     @Description("Web Form Description")
@@ -97,7 +97,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 10)
     public void Webform_Description() throws IOException, InterruptedException, AWTException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoSendKeysByActionClassFluentWait("WebformDecritpion_XPATH", "Decrib_TEXT", 30);
+        actionsClass.DoSendKeysByActionClassFluentWait(driver,"WebformDecritpion_XPATH", "Decrib_TEXT", 30);
     }
 
     @Description("Web Form Queue")
@@ -105,7 +105,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 11)
     public void Webform_Queue() throws IOException, InterruptedException, AWTException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoDoubleClickActionWhenReady("Webformqueue_XPATH", 30);
+        actionsClass.DoDoubleClickActionWhenReady(driver,"Webformqueue_XPATH", 30);
     }
 
     @Description("Search Queue")
@@ -113,7 +113,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 12)
     public void SearchQueue() throws IOException, InterruptedException, AWTException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoActionsSendKeys("SearchQue_XPATH","Ooo_TEXT",30);
+        actionsClass.DoActionsSendKeys(driver,"SearchQue_XPATH","Ooo_TEXT",30);
     }
 
     @Description("Assert Search Queue")
@@ -121,7 +121,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 13)
     public void AssertSearchQueue() throws IOException, InterruptedException, AWTException {
        Assertion assertion = new Assertion(driver);
-       assertion.DoAssertXpathPresentWhenReady("asorder_XPATH","Searchpass_TEXT","Searchfailed_TEXT",20);
+       assertion.DoAssertXpathPresentWhenReady(driver,"asorder_XPATH","Searchpass_TEXT","Searchfailed_TEXT",20);
     }
 
     @Description("Select Queue Type")
@@ -129,8 +129,8 @@ public class CreateWebform extends TestBase {
     @Test(priority = 14)
     public void SelectQueueType() throws IOException, InterruptedException, AWTException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("Orderr_XPATH","Ooo_TEXT",30);
-        utility.DoclickWhenReady("wfmConfig_XPATH","Ooo_TEXT",30);
+        utility.DoclickWhenReady(driver,"Orderr_XPATH","Ooo_TEXT",30);
+        utility.DoclickWhenReady(driver,"wfmConfig_XPATH","Ooo_TEXT",30);
     }
 
     @Description("Web Form Queue Type")
@@ -138,7 +138,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 15)
     public void Webform_QueueType() throws IOException, InterruptedException, AWTException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoDoubleClickActionWhenReady("WebQueueT_XPATH", 30);
+        actionsClass.DoDoubleClickActionWhenReady(driver,"WebQueueT_XPATH", 30);
     }
 
     @Description("Webform_Queue Type PickUp")
@@ -147,8 +147,8 @@ public class CreateWebform extends TestBase {
     public void Webform_QueuetypePickUp() throws IOException, InterruptedException, AWTException {
         ActionsClass actionsClass = new ActionsClass(driver);
         Utility utility = new Utility(driver);
-        actionsClass.DoClickWithMoveToElement("Pickup_XPATH", 30);
-        utility.DoclickWhenReady("wfmConfig_XPATH","Ooo_TEXT",30);
+        actionsClass.DoClickWithMoveToElement(driver,"Pickup_XPATH", 30);
+        utility.DoclickWhenReady(driver,"wfmConfig_XPATH","Ooo_TEXT",30);
     }
 
     @Description("Initila Email Response")
@@ -156,7 +156,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 17)
     public void InitialEmailResponse() throws IOException, InterruptedException, AWTException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoSendKeysByActionClassFluentWait("InitialEmailRespoms_XPATH", "Decrib_TEXT", 30);
+        actionsClass.DoSendKeysByActionClassFluentWait(driver,"InitialEmailRespoms_XPATH", "Decrib_TEXT", 30);
     }
 
     @Description("Display From for a  Particular Period")
@@ -164,7 +164,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 18)
     public void DisplayFromPeriod() throws IOException, InterruptedException, AWTException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("DisplayformPeriod_XPATH","Ooo_TEXT",30);
+        utility.DoclickWhenReady(driver,"DisplayformPeriod_XPATH","Ooo_TEXT",30);
     }
 
     @Description("StartDate")
@@ -172,7 +172,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 19)
     public void StartDate() throws IOException, InterruptedException, AWTException {
      DatePicker datePicker = new DatePicker(driver);
-     datePicker.DatePickerJE("WebDatefrom_XPATH","2020-10-22");
+     datePicker.DatePickerJE(driver,"WebDatefrom_XPATH","2020-10-22");
     }
 
     @Description("EndDate")
@@ -181,8 +181,8 @@ public class CreateWebform extends TestBase {
     public void EndDate() throws IOException, InterruptedException, AWTException {
         DatePicker datePicker = new DatePicker(driver);
         Utility utility = new Utility(driver);
-        datePicker.DatePickerJE("WebDateTo_XPATH","2021-10-22");
-        utility.DoclickWhenReady("wfmConfig_XPATH","Ooo_TEXT",30);
+        datePicker.DatePickerJE(driver,"WebDateTo_XPATH","2021-10-22");
+        utility.DoclickWhenReady(driver,"wfmConfig_XPATH","Ooo_TEXT",30);
     }
 
     @Description("EndDate")
@@ -190,7 +190,7 @@ public class CreateWebform extends TestBase {
     @Test(priority = 21)
     public void AllowAttachedFile() throws IOException, InterruptedException, AWTException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("AllowAttachedFi_XPATH","Ooo_TEXT",30);
+        utility.DoclickWhenReady(driver,"AllowAttachedFi_XPATH","Ooo_TEXT",30);
     }
 
     @Description("Save Web Form")
@@ -198,6 +198,6 @@ public class CreateWebform extends TestBase {
     @Test(priority = 22)
     public void SaveWebForm() throws IOException, InterruptedException, AWTException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("Save_XPATH","Ooo_TEXT",30);
+        utility.DoclickWhenReady(driver,"Save_XPATH","Ooo_TEXT",30);
     }
 }

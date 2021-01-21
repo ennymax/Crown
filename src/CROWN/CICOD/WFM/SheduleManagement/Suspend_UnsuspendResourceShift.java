@@ -18,7 +18,7 @@ public class Suspend_UnsuspendResourceShift extends TestBase {
     public void SUSPEND_UNSUSPEND_RESOURCE_SHIFT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

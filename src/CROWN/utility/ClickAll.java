@@ -16,7 +16,7 @@ public class ClickAll {
         this.driver = driver;
     }
 
-    public void ClickAll(String locator) throws IOException, AWTException, InterruptedException {
+    public void ClickAll(WebDriver driver, String locator) throws IOException, AWTException, InterruptedException {
         List<WebElement> checkBoxList = driver.findElements(By.className(Utility.fetchLocator(locator)));
         checkBoxList.forEach(ele -> ele.click());
     }

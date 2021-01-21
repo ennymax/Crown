@@ -19,7 +19,7 @@ public class ADD_PRODUCT extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         Thread.sleep(2000);

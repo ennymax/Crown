@@ -16,7 +16,7 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
     public void SUSPEND_TAX() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         Thread.sleep(2000);

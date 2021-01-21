@@ -20,12 +20,12 @@ public class AddRemark extends TestBase {
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
 
-        brokenLink.BrokenLink();
+        brokenLink.BrokenLink(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("WorkOrderManager_XPATH"))).click();

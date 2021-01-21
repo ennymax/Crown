@@ -14,6 +14,6 @@ public class View_Service_Alert_District extends TestBase {
         Assertion assertion = new Assertion(driver);
         driver.findElement(By.xpath(Utility.fetchLocator("View_XPATH"))).click();
         System.out.println(driver.getTitle());
-        assertion .DoAssertTittle("EDDCUTi_TEXT","BFPass_TEXT","BFFail_TEXT");
+        assertion .DoAssertTittle(driver,"EDDCUTi_TEXT","BFPass_TEXT","BFFail_TEXT");
     }
 }

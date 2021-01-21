@@ -19,18 +19,18 @@ public class UpdateUser  extends TestBase {
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
         Assertion assertion = new Assertion(driver);
 
-        login.LoginNexus();
+        login.LoginNexus(driver);
 
-        utility.DoclickWhenReady("Wfm_XPATH", "wfm_TEXT",50);
-        utility.DoclickWhenReady("UserManagement_XPATH", "Usermgt_TEXT",50);
-        utility.DoclickWhenReady("Usr_XPATH", "UsersBTN_TEXT",50);
-        utility.DoclickWhenReady("UserActionBTNN_XPATH", "ActionBBTN_TEXT",50);
-        javaScriptUtil.DoscrolltoViewClickWhenReady("UpdateBtton_XPATH","UpdateBTNN_TEXT",40);
-        utility.DosendKeysRandomListwordsWhenReady("NewUserFname_XPATH", "NewUser_TEXT",50);
-        utility.DosendKeysRandomListwordsWhenReady("NewUserLastName_XPATH", "FirstNa_TEXT",50);
+        utility.DoclickWhenReady(driver,"Wfm_XPATH", "wfm_TEXT",50);
+        utility.DoclickWhenReady(driver,"UserManagement_XPATH", "Usermgt_TEXT",50);
+        utility.DoclickWhenReady(driver,"Usr_XPATH", "UsersBTN_TEXT",50);
+        utility.DoclickWhenReady(driver,"UserActionBTNN_XPATH", "ActionBBTN_TEXT",50);
+        javaScriptUtil.DoscrolltoViewClickWhenReady(driver,"UpdateBtton_XPATH","UpdateBTNN_TEXT",40);
+        utility.DosendKeysRandomListwordsWhenReady(driver,"NewUserFname_XPATH", "NewUser_TEXT",50);
+        utility.DosendKeysRandomListwordsWhenReady(driver,"NewUserLastName_XPATH", "FirstNa_TEXT",50);
 
-        utility.DoclickWhenReady("CreateNewUser_XPATH", "UpCreta_TEXT",50);
-        assertion.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass1_XPATH", "DplFail1_XPATH",30);
-        utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
+        utility.DoclickWhenReady(driver,"CreateNewUser_XPATH", "UpCreta_TEXT",50);
+        assertion.DoAssertContainsWhenReady(driver,"AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass1_XPATH", "DplFail1_XPATH",30);
+        utility.DoclickWhenReady(driver,"NewUserOKBTN_XPATH","Ok_TEXT",40);
     }
 }

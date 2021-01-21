@@ -14,7 +14,7 @@ public class UPLOAD_PRODUCT extends TestBase {
     public void upload_product() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         Thread.sleep(2000);

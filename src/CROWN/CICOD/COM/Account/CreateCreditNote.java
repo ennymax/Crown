@@ -1,9 +1,8 @@
 package CROWN.CICOD.COM.Account;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.JavaScriptUtil;
-import CROWN.utility.Login;
-import CROWN.utility.Utility;
+import CROWN.Listeners.InvokedMethodListeners;
+import CROWN.utility.*;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
@@ -17,63 +16,61 @@ import java.security.SecureRandom;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-
+@Listeners(InvokedMethodListeners.class)
 public class CreateCreditNote extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
     @Description("login")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
-        Login login = new Login(driver);
-        login.Login();
+        this.login.Login(driver);
     }
 
     @Description("Customer Order Management")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+        utility.DoclickWhenReady(driver,"com_XPATH", "comm_TEXT", 60);
     }
 
     @Description("Account Button")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 3)
     public void AccountButton() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("AccountBTN_XPATH", "CreditN_TEXT", 60);
+        utility.DoclickWhenReady(driver,"AccountBTN_XPATH", "CreditN_TEXT", 60);
     }
 
     @Description("Credit Note Button")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 4)
     public void CreditNoteButton() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("CreditNote_XPATH", "CreditN_TEXT", 60);
+        utility.DoclickWhenReady(driver,"CreditNote_XPATH", "CreditN_TEXT", 60);
     }
 
     @Description("Create Credit Note Button")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 5)
     public void CreateCreditNoteButton() throws IOException, InterruptedException {
-        JavaScriptUtil utility = new JavaScriptUtil(driver);
-        utility.DoscrolltoViewClickFluentWait("CreateCreditNote_XPATH", "CreateCN_TEXT", 60);
+        javaScriptUtil.DoscrolltoViewClickFluentWait(driver,"CreateCreditNote_XPATH", "CreateCN_TEXT", 60);
     }
 
     @Description("Input Customer Name")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 6)
     public void InputCustomerName() throws IOException, InterruptedException, AWTException {
-        Utility utility = new Utility(driver);
-        utility.DoSendKeysRobotClassFluentWait("CCustomer_XPATH", "EnterName_TEXT", "EnterName_TEXT", 60);
+        utility.DoSendKeysRobotClassFluentWait(driver,"CCustomer_XPATH", "EnterName_TEXT", "EnterName_TEXT", 60);
     }
 
     @Description("Select Reason")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 7)
     public void SelectReason() throws IOException, InterruptedException, AWTException {
-        Utility utility = new Utility(driver);
-        utility.DoSelectValuesByIndex("cReason_XPATH", "SS_TEXT", 2, 60);
+        utility.DoSelectValuesByIndex(driver,"cReason_XPATH", "SS_TEXT", 2, 60);
     }
 
     @Description("input Invoice Number")

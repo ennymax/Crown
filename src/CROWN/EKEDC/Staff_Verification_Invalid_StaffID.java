@@ -13,7 +13,7 @@ public class Staff_Verification_Invalid_StaffID extends TestBase {
     public void STAFF_VERIFICATION_INVALID_STAFFID() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("NavigatetoHomepageBTN_XPATH"))).click();
 

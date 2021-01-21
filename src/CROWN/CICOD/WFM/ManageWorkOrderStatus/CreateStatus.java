@@ -19,7 +19,7 @@ public class CreateStatus extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

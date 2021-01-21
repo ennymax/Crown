@@ -20,7 +20,7 @@ public class CreateWorkOrder extends TestBase {
         Randomstuff randomStuff = new Randomstuff();
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
@@ -61,10 +61,10 @@ public class CreateWorkOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("cont_XPATH"))).click();
 
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickFluentWait("cont_XPATH", 20);
-        excelUtil.DoSelectValuesByIndex("cont_XPATH",5,20);
-        excelUtil.DoclickWhenReady("niger_XPATH", 20);
-        javaScriptUtil.DoClickFluentwaitJS("niger_XPATH", 30);
+        excelUtil.DoscrolltoViewClickFluentWait(driver,"cont_XPATH", 20);
+        excelUtil.DoSelectValuesByIndex(driver,"cont_XPATH",5,20);
+        excelUtil.DoclickWhenReady(driver,"niger_XPATH", 20);
+        javaScriptUtil.DoClickFluentwaitJS(driver,"niger_XPATH", 30);
 
         Thread.sleep(999999999);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("city_XPATH")));

@@ -18,13 +18,13 @@ public class SELECT_DELIVERY_DETAILS extends TestBase {
         BrokenLink brokenLink = new BrokenLink(driver);
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
 
-        brokenLink.BrokenLink();
+        brokenLink.BrokenLink(driver);
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);

@@ -19,7 +19,7 @@ public class UpdateResourceShedule extends TestBase {
     public void UPDATE_RESOURCE_SCHEDULE() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

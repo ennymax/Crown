@@ -23,7 +23,7 @@ public class RemoveProductCategory extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successfull");
@@ -40,7 +40,7 @@ public class RemoveProductCategory extends TestBase {
         Thread.sleep(1000);
         driver.findElement(By.xpath(Utility.fetchLocator("RemoveProductCategory_XPATH"))).click();
 
-        login.AlertDismis();
+        login.AlertDismis(driver);
 
         driver.quit();
         System.out.println("********************REMOVE PRODUCT CATEGORY********************");

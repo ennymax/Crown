@@ -14,7 +14,7 @@ public class Login_with_Wrong_Email extends TestBase {
     public void LOGIN_WITH_WRONG_EMAIL() throws IOException {
         Login login = new Login(driver);
 
-        login.Login_with_Wrong_EmailEKEDC();
+        login.Login_with_Wrong_EmailEKEDC(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("UserAlreadyExist_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Already Exist message was displayed Successfully");

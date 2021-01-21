@@ -77,7 +77,7 @@
         <test-method signature="AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:01Z" name="AccountButton" finished-at="2020-12-10T15:56:03Z" duration-ms="2322" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AccountButton -->
+        </test-method> <!-- Customermanagment -->
         <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:03Z" name="getResult" finished-at="2020-12-10T15:56:03Z" duration-ms="82" status="PASS">
           <params>
             <param index="0">
@@ -249,7 +249,7 @@
         <test-method signature="AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:02Z" name="AccountButton" finished-at="2020-12-10T15:57:04Z" duration-ms="1969" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AccountButton -->
+        </test-method> <!-- Customermanagment -->
         <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:05Z" name="getResult" finished-at="2020-12-10T15:57:05Z" duration-ms="48" status="PASS">
           <params>
             <param index="0">

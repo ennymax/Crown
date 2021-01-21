@@ -35,7 +35,7 @@ public class AddNewInventoryStatusRule extends TestBase {
         int selectrole = rn.nextInt(24) + 1;
         int selectrole1 = rn.nextInt(24) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");

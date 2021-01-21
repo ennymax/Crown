@@ -14,7 +14,7 @@ public class Track_Ticket_With_Wrong_Billing_ID extends TestBase {
     public void TRACK_VALID_ID_WITH_WRONG_ID() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("NavigatetoHomepageBTN_XPATH"))).click();

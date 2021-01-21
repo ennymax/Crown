@@ -15,7 +15,7 @@ public class LoginWithWrongEmail extends TestBase {
     public void LOGIN_WITH_WRONG_EMAIL() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginWrongEmail();
+        login.LoginWrongEmail(driver);
 
         Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertInvalidEmailOrPassword_XPATH"))).size() != 0) {

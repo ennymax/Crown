@@ -14,7 +14,7 @@ public class View_Ticket_History_Logged_In_User_Mutiple_Account extends TestBase
     public void VIEW_TICKET_HISTORY_LOGGED_IN_MULTIPLE_USER() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginMultipleAccountEKEDC();
+        login.LoginMultipleAccountEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("ComplaintsBTN_XPATH"))).click();
 

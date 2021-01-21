@@ -22,7 +22,7 @@ public class CreateResourceShift extends TestBase {
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(150000) + 1;
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

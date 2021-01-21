@@ -15,7 +15,7 @@ public class AssertEscalation extends TestBase {
     public void ASSERT_ESCALATION() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
 

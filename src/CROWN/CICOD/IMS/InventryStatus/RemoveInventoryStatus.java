@@ -26,7 +26,7 @@ public class RemoveInventoryStatus extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");
@@ -61,9 +61,6 @@ public class RemoveInventoryStatus extends TestBase {
         jstbv.executeScript("arguments[0].click();", elementtbv);
 
         Thread.sleep(1500);
-        login.AlertDismis();
-
-        driver.quit();
-        System.out.println("********************REMOVE INVENTORY STATUS********************");
+        login.AlertDismis(driver);
     }
 }

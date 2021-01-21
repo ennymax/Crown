@@ -25,7 +25,7 @@ public class ViewDashboard extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 

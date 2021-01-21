@@ -1,7 +1,7 @@
 package CROWN.Base;
 
-import CROWN.utility.ScreenShot;
-import CROWN.utility.Utility;
+import CROWN.Listeners.InvokedMethodListeners;
+import CROWN.utility.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -19,6 +19,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.IConfigurationListener;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -31,6 +32,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.ITestResult.SUCCESS;
@@ -38,6 +40,7 @@ import static org.testng.ITestResult.SUCCESS;
 public class TestBase {
 
     public WebDriver driver;
+
     public static ExtentReports extent;
     public static ExtentHtmlReporter htmlReporter;
     public static ExtentTest test;
@@ -172,7 +175,6 @@ public class TestBase {
         ScreenShot screenShot = new ScreenShot(driver);
 
         if (result.getStatus() == ITestResult.FAILURE) {
-            screenShot.ScreenShot();
             test.fail(MarkupHelper.createLabel(result.getName() + " The Test Case Failed", ExtentColor.RED));
             test.fail(result.getThrowable());
 
@@ -187,15 +189,16 @@ public class TestBase {
         extent.flush();
     }
 
-    private Date getTime(long millis) {
+    public Date getTime(long millis) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(millis);
         return calendar.getTime();
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void TestName(ITestResult result) {
+    public void GetTestName(ITestResult result) throws InterruptedException {
         test = extent.createTest(result.getMethod().getMethodName().toUpperCase());
+        Thread.sleep(500);
     }
 
     @AfterClass(alwaysRun = true)

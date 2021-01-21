@@ -14,7 +14,7 @@ public class Login_with_Registered_Email extends TestBase {
     public void LOGIN_WITH_REGISTERED_EMAIL() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.Login_with_RegEmailEKEDC();
+        login.Login_with_RegEmailEKEDC(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertDashBoard_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Already Exist message was displayed Successfully");

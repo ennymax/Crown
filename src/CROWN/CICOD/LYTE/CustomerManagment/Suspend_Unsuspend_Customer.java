@@ -17,7 +17,7 @@ public class Suspend_Unsuspend_Customer extends TestBase {
     public void SUSPEND_UNSUSPEND_CUSTOMER() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         Thread.sleep(2000);

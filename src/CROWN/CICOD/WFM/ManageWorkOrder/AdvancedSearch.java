@@ -21,7 +21,7 @@ public class AdvancedSearch extends TestBase {
         Login login = new Login(driver);
         TabHandle tabHandle = new TabHandle(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

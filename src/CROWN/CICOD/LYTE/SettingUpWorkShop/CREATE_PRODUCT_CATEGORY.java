@@ -16,7 +16,7 @@ public class CREATE_PRODUCT_CATEGORY extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();

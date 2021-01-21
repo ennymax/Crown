@@ -16,7 +16,7 @@ public class DatePicker extends TestBase {
         this.driver = driver;
     }
 
-    public void DatePickerJE(String locator, String Date) throws IOException {
+    public void DatePickerJE(WebDriver driver, String locator, String Date) throws IOException {
         WebElement select = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].type = arguments[1]", select, "text");

@@ -21,7 +21,7 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Access WFM")
@@ -29,7 +29,7 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 2)
     public void WorkFlowManager() throws IOException, InterruptedException {
         ExcelUtil util = new ExcelUtil(driver);
-        util.DoscrolltoViewClickWhenReady("Wfm_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady(driver,"Wfm_XPATH", 30);
     }
 
     @Description("Assert Successful Access of WFM")
@@ -37,7 +37,7 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 3)
     public void AssertWorkFlowManager() throws IOException, InterruptedException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertXpathAbsentWhenReady("wfmConfig_XPATH", "EscalationPass_TEXT", "EscalationFailed_TEXT", 30);
+        assertion.DoAssertXpathAbsentWhenReady(driver,"wfmConfig_XPATH", "EscalationPass_TEXT", "EscalationFailed_TEXT", 30);
     }
 
     @Description("Access Configuration")
@@ -45,7 +45,7 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 4)
     public void AccessConfiguration() throws IOException, InterruptedException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoClickActionclassWhenReady("wfmConfig_XPATH", 30);
+        actionsClass.DoClickActionclassWhenReady(driver,"wfmConfig_XPATH", 30);
     }
 
     @Description("Assert Webform and WorkOrder Extension")
@@ -53,8 +53,8 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 5)
     public void AssertWebForm_WorkOrderExtension() throws IOException, InterruptedException {
         Assertion assertion = new Assertion(driver);
-        assertion.DoAssertXpathAbsentWhenReady("webform_XPATH", "WebPass_Text", "WebFailed_Text", 30);
-        assertion.DoAssertXpathAbsentWhenReady("ExtendedWorkOrder_XPATH", "ExtendedPass_Text", "ExtendedFailed_Text", 30);
+        assertion.DoAssertXpathAbsentWhenReady(driver,"webform_XPATH", "WebPass_Text", "WebFailed_Text", 30);
+        assertion.DoAssertXpathAbsentWhenReady(driver,"ExtendedWorkOrder_XPATH", "ExtendedPass_Text", "ExtendedFailed_Text", 30);
     }
 
     @Description("Access WebForm")
@@ -62,7 +62,7 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 6)
     public void Accesswebform() throws IOException, InterruptedException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoClickActionclassWhenReady("webform_XPATH", 30);
+        actionsClass.DoClickActionclassWhenReady(driver,"webform_XPATH", 30);
     }
 
     @Description("Acton Button")
@@ -78,7 +78,7 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 8)
     public void Update() throws IOException, InterruptedException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        actionsClass.DoClickActionclassWhenReady("webformUpdate_XPATH", 30);
+        actionsClass.DoClickActionclassWhenReady(driver,"webformUpdate_XPATH", 30);
     }
 
     @Description("Save Web Form")
@@ -86,6 +86,6 @@ public class UpdateWebForm extends TestBase {
     @Test(priority = 22)
     public void SaveWebForm() throws IOException, InterruptedException, AWTException {
         Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("s11_XPATH","Ooo_TEXT",30);
+        utility.DoclickWhenReady(driver,"s11_XPATH","Ooo_TEXT",30);
     }
 }

@@ -21,7 +21,7 @@ public class BrokenLink extends TestBase {
         this.driver = driver;
     }
 
-    public void BrokenLink() throws InterruptedException, IOException {
+    public void BrokenLink(WebDriver driver) throws InterruptedException, IOException {
 
         Thread.sleep(5000);
         List<WebElement> links = driver.findElements(By.tagName("a"));

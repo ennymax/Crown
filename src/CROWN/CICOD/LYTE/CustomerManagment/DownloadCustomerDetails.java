@@ -14,7 +14,7 @@ public class DownloadCustomerDetails extends TestBase {
     public void DOWNLOAD_CUSTOMER_DETAILS() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();

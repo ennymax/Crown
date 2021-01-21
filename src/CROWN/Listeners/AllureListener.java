@@ -29,7 +29,7 @@ public class AllureListener extends TestBase implements ITestListener {
 
 	// HTML attachments for Allure
 	@Attachment(value = "{0}", type = "text/html")
-	public static String attachHtml(String html) {
+	public String attachHtml(String html) {
 		return html;
 	}
 

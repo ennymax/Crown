@@ -17,15 +17,15 @@ public class ResetPassword extends TestBase {
         Assertion assertion = new Assertion(driver);
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
-        login.LoginNexus();
+        login.LoginNexus(driver);
 
-        utility.DoclickWhenReady("Wfm_XPATH", "wfm_TEXT", 50);
-        utility.DoclickWhenReady("UserManagement_XPATH", "Usermgt_TEXT", 50);
-        utility.DoclickWhenReady("Usr_XPATH", "UsersBTN_TEXT", 50);
-        utility.DoclickWhenReady("EniActionButton_XPATH", "ActionBBTN_TEXT", 50);
-        javaScriptUtil.DoscrolltoViewClickWhenReady("ResetPasswordBTN_XPATH", "Resetpass_TEXT", 40);
-        utility.DowaitandAcceptAlerwhenReady(20);
-        assertion.DoAssertContainsWhenReady("lcont_XPATH", "usercontext_TEXT", "ResetpassPass_TEXT", "ResetpassFail_TEXT", 30);
-        utility.DoclickWhenReady("OkBTNNREsetpassw_XPATH", "Ree_TEXT", 50);
+        utility.DoclickWhenReady(driver,"Wfm_XPATH", "wfm_TEXT", 50);
+        utility.DoclickWhenReady(driver,"UserManagement_XPATH", "Usermgt_TEXT", 50);
+        utility.DoclickWhenReady(driver,"Usr_XPATH", "UsersBTN_TEXT", 50);
+        utility.DoclickWhenReady(driver,"EniActionButton_XPATH", "ActionBBTN_TEXT", 50);
+        javaScriptUtil.DoscrolltoViewClickWhenReady(driver,"ResetPasswordBTN_XPATH", "Resetpass_TEXT", 40);
+        utility.DowaitandAcceptAlerwhenReady(driver,20);
+        assertion.DoAssertContainsWhenReady(driver,"lcont_XPATH", "usercontext_TEXT", "ResetpassPass_TEXT", "ResetpassFail_TEXT", 30);
+        utility.DoclickWhenReady(driver,"OkBTNNREsetpassw_XPATH", "Ree_TEXT", 50);
     }
 }

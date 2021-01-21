@@ -16,7 +16,7 @@ public class Downloadorderhistory extends TestBase {
     public void DOWNLOAD_ORDER_HISTORY() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);

@@ -15,7 +15,7 @@ public class LoginWithCorrectDetails extends TestBase {
     public void LOGIN_WITH_CORRECT_DETAILS() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {

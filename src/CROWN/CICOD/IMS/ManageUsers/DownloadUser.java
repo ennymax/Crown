@@ -43,7 +43,7 @@ public class DownloadUser extends TestBase {
         int resourcetype = rn.nextInt(7) + 1;
         int resourcelevel = rn.nextInt(6) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");

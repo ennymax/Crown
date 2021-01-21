@@ -31,7 +31,7 @@ public class ReceiveInventoryByInvoice extends TestBase {
         int role = rn.nextInt(110000) + 1;
         int role1 = rn.nextInt(1000000000) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");
@@ -78,7 +78,7 @@ public class ReceiveInventoryByInvoice extends TestBase {
         Thread.sleep(1000);
         driver.findElement(By.xpath(Utility.fetchLocator("NextBTN1_XPATH"))).click();
 
-        login.AcceptAlert();
+        login.AcceptAlert(driver);
 
         Thread.sleep(1500);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertManageSupplierCreation_XPATH"))).size() != 0) {

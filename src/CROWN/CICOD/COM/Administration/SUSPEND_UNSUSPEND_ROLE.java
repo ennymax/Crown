@@ -1,9 +1,8 @@
 package CROWN.CICOD.COM.Administration;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.ScreenShot;
-import CROWN.utility.Utility;
+import CROWN.Listeners.InvokedMethodListeners;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -11,25 +10,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
+@Listeners(InvokedMethodListeners.class)
 public class SUSPEND_UNSUSPEND_ROLE extends TestBase {
+
+    protected Login login = new Login(driver);
+    protected Utility utility = new Utility(driver);
+    protected Assertion assertion = new Assertion(driver);
+    protected JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
     @Description("login")
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 1)
     public void login() throws IOException, InterruptedException {
-        Login login = new Login(driver);
-        login.Login();
+        login.Login(driver);
     }
 
     @Description("Customer Order Management")
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+        utility.DoclickWhenReady(driver,"com_XPATH", "comm_TEXT", 60);
     }
 
     @Description("Administration Module")

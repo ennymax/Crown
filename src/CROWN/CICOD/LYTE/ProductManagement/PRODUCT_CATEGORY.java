@@ -15,7 +15,7 @@ public class PRODUCT_CATEGORY extends TestBase {
     public void PRODUCT_category() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         Thread.sleep(2000);

@@ -33,7 +33,7 @@ public class CreateNewResource extends TestBase {
         Randomstuff randomStuff = new Randomstuff();
         Randomstuff rrandomStuff = new Randomstuff();
 
-        login.LoginNexus();
+        login.LoginNexus(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
@@ -69,7 +69,7 @@ public class CreateNewResource extends TestBase {
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
 
-        fileUpload.UploadFileImage3MB();
+        fileUpload.UploadFileImage3MB(driver);
         test.log(Status.PASS, "Profile Picture Of Resource Uploaded Successfully");
 
         Thread.sleep(2000);

@@ -17,7 +17,7 @@ public class ViewPaymentHistory extends TestBase {
     public void VIEW_PAYMENT_HISTORY() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginExpiredAccount();
+        login.LoginExpiredAccount(driver);
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("Billing_XPATH")));

@@ -16,7 +16,7 @@ public class Make_Payment_Single_Account_Pay_By_Bank_PostPaid extends TestBase {
         Login login = new Login(driver);
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("MakepAYMENTbtn_XPATH"))).click();

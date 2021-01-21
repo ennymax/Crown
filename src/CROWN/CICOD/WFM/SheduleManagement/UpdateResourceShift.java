@@ -24,7 +24,7 @@ public class UpdateResourceShift extends TestBase {
         LocalDateTime date = LocalDateTime.now();
         long seconds = Duration.between(date.withSecond(0).withMinute(0).withHour(0), date).getSeconds();
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

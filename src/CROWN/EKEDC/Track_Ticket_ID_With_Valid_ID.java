@@ -17,7 +17,7 @@ public class Track_Ticket_ID_With_Valid_ID extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("NavigatetoHomepageBTN_XPATH"))).click();
 

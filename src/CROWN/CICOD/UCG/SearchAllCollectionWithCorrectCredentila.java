@@ -20,7 +20,7 @@ public class SearchAllCollectionWithCorrectCredentila extends TestBase {
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();

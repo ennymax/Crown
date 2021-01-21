@@ -17,7 +17,7 @@ public class Make_Payment_By_Bank_Transfer_Prepaid extends TestBase {
 
         ScreenShot screenShot = new ScreenShot(driver);
 
-        login.LoginPrePaidEKEDC();
+        login.LoginPrePaidEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("MakepAYMENTbtn_XPATH"))).click();
 

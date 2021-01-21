@@ -31,7 +31,7 @@ public class RemoveInventoryStatusRule extends TestBase {
         int selectrole = rn.nextInt(24) + 1;
         int selectrole1 = rn.nextInt(24) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 
@@ -60,9 +60,6 @@ public class RemoveInventoryStatusRule extends TestBase {
         JavascriptExecutor jstgn = (JavascriptExecutor) driver;
         jstgn.executeScript("arguments[0].click();", elementtgn);
 
-        login.AlertDismis();
-
-        driver.quit();
-        System.out.println("********************REMOVE INVENTORY STATUS RULE********************");
+        login.AlertDismis(driver);
     }
 }

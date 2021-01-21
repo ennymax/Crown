@@ -17,7 +17,7 @@ public class Add_Account_With_Wrong_Billing_ID_Prepaid extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();

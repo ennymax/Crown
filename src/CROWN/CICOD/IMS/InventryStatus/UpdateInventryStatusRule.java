@@ -30,7 +30,7 @@ public class UpdateInventryStatusRule extends TestBase {
         SecureRandom rn = new SecureRandom();
         int role = rn.nextInt(4) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");

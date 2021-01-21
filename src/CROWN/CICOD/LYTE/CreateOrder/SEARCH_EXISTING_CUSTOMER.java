@@ -15,7 +15,7 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
     public void SEARCH_EXISTING_customer() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         Thread.sleep(2000);

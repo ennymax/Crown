@@ -16,7 +16,7 @@ public class Complete_Reg_ValidBilling_PostPaidLandLord extends TestBase {
     public void COMPLETE_REG_VALID_BILLING_POSTPAID_LANDLORD() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.Login_PostPaidLandlordEKEDC();
+        login.Login_PostPaidLandlordEKEDC(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AccountNumberEKE_XPATH"))).sendKeys(Utility.fetchLocator("AccountNumber_TEXT"));

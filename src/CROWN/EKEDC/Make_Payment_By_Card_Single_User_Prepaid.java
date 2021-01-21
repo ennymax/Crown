@@ -17,7 +17,7 @@ public class Make_Payment_By_Card_Single_User_Prepaid extends TestBase {
         //driver.get("https://staging-ekedp.convergenceondemand.net/");
         Login login = new Login(driver);
 
-        login.LoginPrePaidEKEDC();
+        login.LoginPrePaidEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("MakepAYMENTbtn_XPATH"))).click();
 

@@ -16,7 +16,7 @@ public class UPDATE_PRODUCT extends TestBase {
     public void UPDATE_PRODUCT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         Thread.sleep(2000);

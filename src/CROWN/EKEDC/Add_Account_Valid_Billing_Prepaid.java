@@ -17,7 +17,7 @@ public class Add_Account_Valid_Billing_Prepaid extends TestBase {
     public void ADD_ACCOUNT_VALID_BILLING_PREPAID() throws InterruptedException, IOException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         Thread.sleep(1500);
         driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();

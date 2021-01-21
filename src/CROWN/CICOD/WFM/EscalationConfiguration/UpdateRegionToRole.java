@@ -22,7 +22,7 @@ public class UpdateRegionToRole extends TestBase {
     public void UPDATE_ESCALATION_ROLE() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

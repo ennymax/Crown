@@ -66,6 +66,14 @@
     <orderEntry type="library" name="Maven: jakarta.activation:jakarta.activation-api:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-osgi:2.3.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.sling:org.apache.sling.javax.activation:0.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.aventstack:extentreports:3.1.5" level="project" />
+    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.23" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:bson:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.testng:testng:6.14.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache-extras.beanshell:bsh:2.0b6" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
@@ -80,18 +88,12 @@
     <orderEntry type="library" name="Maven: org.apache.poi:openxml4j:1.0-beta" level="project" />
     <orderEntry type="library" name="Maven: com.relevantcodes:extentreports:2.41.2" level="project" />
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.8.11.1" level="project" />
-    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.23" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.0.4" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:bson:3.0.4" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.0.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.sonarsource.sonarqube:sonar-plugin-api:6.7" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.woodstox:woodstox-core-lgpl:4.4.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.xml.stream:stax-api:1.0-2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.staxmate:staxmate:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.activation:javax.activation:1.2.0" level="project" />
-    <orderEntry type="library" name="Maven: com.aventstack:extentreports:3.1.5" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746" level="project" />
     <orderEntry type="library" name="Maven: org.sonatype.plexus:plexus-sec-dispatcher:1.4" level="project" />
     <orderEntry type="library" name="Maven: org.sonatype.plexus:plexus-cipher:1.4" level="project" />
@@ -113,8 +115,6 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents.core5:httpcore5-h2:5.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.rauschig:jarchivelib:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.18" level="project" />
-    <orderEntry type="library" name="Maven: org.testng:testng:6.14.3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache-extras.beanshell:bsh:2.0b6" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.3" level="project" />

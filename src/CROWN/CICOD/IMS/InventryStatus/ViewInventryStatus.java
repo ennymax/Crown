@@ -26,13 +26,7 @@ public class ViewInventryStatus extends TestBase {
 
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
-
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
+        login.LoginCorrectDetails(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 

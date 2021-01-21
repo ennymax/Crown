@@ -17,7 +17,7 @@ public class View_DashBoard_By_Date extends TestBase {
     public void VIEW_DASHBOARD() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);

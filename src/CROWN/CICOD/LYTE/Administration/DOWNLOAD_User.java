@@ -14,7 +14,7 @@ public class DOWNLOAD_User extends TestBase {
     public void DOWNLOAD_USER() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
         Thread.sleep(10000);
         System.out.println(driver.getTitle());
 

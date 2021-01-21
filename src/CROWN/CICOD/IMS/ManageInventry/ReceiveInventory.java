@@ -32,13 +32,7 @@ public class ReceiveInventory extends TestBase {
         int role = rn.nextInt(110000) + 1;
         int role1 = rn.nextInt(10) + 1;
 
-        login.LoginCorrectDetails();
-
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
+        login.LoginCorrectDetails(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 
@@ -62,7 +56,7 @@ public class ReceiveInventory extends TestBase {
         JavascriptExecutor jsb = (JavascriptExecutor) driver;
         jsb.executeScript("arguments[0].click();", elementb);
 
-        login.AcceptAlert();
+        login.AcceptAlert(driver);
 
         Thread.sleep(2500);
         driver.findElement(By.xpath(Utility.fetchLocator("RecieveInventryBatchNumber_XPATH"))).sendKeys(Utility.fetchLocator("a_TEXT")+ role );

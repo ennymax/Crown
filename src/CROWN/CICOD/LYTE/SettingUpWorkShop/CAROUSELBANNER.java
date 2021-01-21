@@ -23,7 +23,7 @@ public class CAROUSELBANNER extends TestBase {
         FileUpload fileUpload = new FileUpload();
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         Thread.sleep(2000);
@@ -63,7 +63,7 @@ public class CAROUSELBANNER extends TestBase {
         builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
 
         Thread.sleep(4000);
-        fileUpload.UploadFileImage3MB();
+        fileUpload.UploadFileImage3MB(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CarouselSaveBtn_XPATH"))).click();

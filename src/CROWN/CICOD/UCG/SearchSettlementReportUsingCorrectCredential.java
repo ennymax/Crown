@@ -16,7 +16,7 @@ public class SearchSettlementReportUsingCorrectCredential extends TestBase {
     public void SEARCH_SETTLEMENT_REPORT_WITH_INCORRECT_CREDENTIALS() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();

@@ -1,6 +1,7 @@
 package CROWN.CICOD.LYTE.Administration;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.ExcelUtil;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
@@ -18,8 +19,9 @@ public class AddUser extends TestBase {
     @Test
     public void ADD_USER() throws IOException, InterruptedException {
         Login login = new Login(driver);
+        ExcelUtil excelUtil = new ExcelUtil(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
@@ -45,8 +47,7 @@ public class AddUser extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("RFirsteName_XPATH"))).sendKeys(Utility.fetchLocator("CustomerFirstname_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("RLastName_XPATH"))).sendKeys(Utility.fetchLocator("CustomerLastName_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("RPhoneNumber_XPATH"))).sendKeys(Utility.fetchLocator("CustomerPhoneNumber_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("REmail_XPATH"))).sendKeys(Utility.fetchLocator("CustomerEmail_TEXT"));
-
+        excelUtil.DosendKeysRandomEmailsWhenReady(driver,"REmail_XPATH",20);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateUserSaveBTN_XPATH"))).click();
 
         WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("qqq_XPATH")));

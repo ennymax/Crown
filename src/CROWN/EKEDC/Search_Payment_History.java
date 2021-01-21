@@ -14,7 +14,7 @@ public class Search_Payment_History extends TestBase {
     public void SEARCH_PAYMENT_HISTORY() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("PaymentHistory_XPATH"))).click();
 

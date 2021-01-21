@@ -20,7 +20,7 @@ public class Assertion extends TestBase {
         this.driver = driver;
     }
 
-    public void DoCheckBoxSelected(String locator,String DisplayPassmsg, String DisplayFailmsg, int timeOut) throws IOException, InterruptedException {
+    public void DoCheckBoxSelected(WebDriver driver, String locator,String DisplayPassmsg, String DisplayFailmsg, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -34,7 +34,7 @@ public class Assertion extends TestBase {
         }
     }
 
-    public void DoAssertContainsWhenReady(String locator, String Containstext, String DisplayPassmsg, String DisplayFailmsg, int timeOut) throws IOException, InterruptedException {
+    public void DoAssertContainsWhenReady(WebDriver driver, String locator, String Containstext, String DisplayPassmsg, String DisplayFailmsg, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -48,7 +48,7 @@ public class Assertion extends TestBase {
         }
     }
 
-    public void DoAssertXpathPresentWhenReady(String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
+    public void DoAssertXpathPresentWhenReady(WebDriver driver, String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -59,7 +59,7 @@ public class Assertion extends TestBase {
         }
     }
 
-    public void DoAssertXpathAbsentWhenReady(String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
+    public void DoAssertXpathAbsentWhenReady(WebDriver driver, String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -70,7 +70,7 @@ public class Assertion extends TestBase {
         }
     }
 
-    public void DoAssertEqualWhenReady(String locator, String assertionString, String DisplayPassmsg, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
+    public void DoAssertEqualWhenReady(WebDriver driver, String locator, String assertionString, String DisplayPassmsg, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1600);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -83,7 +83,7 @@ public class Assertion extends TestBase {
         }
     }
 
-    public void DoAssertTittle(String TittleText, String DisplayPassmsg, String DisplayFailmessage) throws IOException, InterruptedException {
+    public void DoAssertTittle(WebDriver driver, String TittleText, String DisplayPassmsg, String DisplayFailmessage) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         String expectedTitle = Utility.fetchLocator(TittleText);
@@ -97,7 +97,7 @@ public class Assertion extends TestBase {
         }
     }
 
-    public boolean DoAssertElementEnabled(String locator, String ObjectName, int timeout) throws InterruptedException, IOException {
+    public boolean DoAssertElementEnabled(WebDriver driver, String locator, String ObjectName, int timeout) throws InterruptedException, IOException {
         Thread.sleep(500);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebElement element = null;
@@ -122,7 +122,7 @@ public class Assertion extends TestBase {
         return flag;
     }
 
-    public boolean DoAssertElementDisplayed(String locator, String ObjectName, int timeout) throws InterruptedException, IOException {
+    public boolean DoAssertElementDisplayed(WebDriver driver, String locator, String ObjectName, int timeout) throws InterruptedException, IOException {
         Thread.sleep(500);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebElement element = null;
@@ -147,7 +147,7 @@ public class Assertion extends TestBase {
         return flag;
     }
 
-    public boolean DoAssertElementSelected(String locator, String ObjectName, int timeout) throws InterruptedException, IOException {
+    public boolean DoAssertElementSelected(WebDriver driver, String locator, String ObjectName, int timeout) throws InterruptedException, IOException {
         Thread.sleep(500);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebElement element = null;

@@ -29,7 +29,7 @@ public class UpdateInventoryStatus extends TestBase {
         SecureRandom rn = new SecureRandom();
         int role = rn.nextInt(4) + 1;
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");
@@ -60,7 +60,7 @@ public class UpdateInventoryStatus extends TestBase {
         JavascriptExecutor jstgn = (JavascriptExecutor) driver;
         jstgn.executeScript("arguments[0].click();", elementtgn);
 
-        login.AlertDismis();
+        login.AlertDismis(driver);
 
         driver.quit();
         System.out.println("********************UPDATE INVENTORY STATUS********************");

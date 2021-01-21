@@ -17,7 +17,7 @@ public class FilterVarienceReport extends TestBase {
     public void FILTER_VARIANCE_REPORT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();

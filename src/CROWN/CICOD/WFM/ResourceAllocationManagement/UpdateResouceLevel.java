@@ -19,7 +19,7 @@ public class UpdateResouceLevel extends TestBase {
     public void Update_RESOURCE_LEVEL() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginPremium();
+        login.LoginPremium(driver);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

@@ -17,7 +17,7 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
     public void SUSPEND_PRODUCT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //Com
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();

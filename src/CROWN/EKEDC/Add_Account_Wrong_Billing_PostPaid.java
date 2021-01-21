@@ -15,7 +15,7 @@ public class Add_Account_Wrong_Billing_PostPaid extends TestBase {
     public void ADD_ACCOUNT_WITH_WRONG_BILLING_POSTPAID() throws InterruptedException, IOException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();
         driver.findElement(By.xpath(Utility.fetchLocator("ManageAccountBTN_XPATH"))).click();

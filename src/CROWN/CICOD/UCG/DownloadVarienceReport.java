@@ -16,7 +16,7 @@ public class DownloadVarienceReport extends TestBase {
     public void DOWNLOAD_VARIANCE_REPORT() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginCorrectDetails();
+        login.LoginCorrectDetails(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 

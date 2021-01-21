@@ -21,7 +21,7 @@ public class VIEW_SUSCRIPTION extends TestBase {
         Login login = new Login(driver);
         VideoRecorder.startRecording("TestingVideoRecording");
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("sdsd_XPATH")));

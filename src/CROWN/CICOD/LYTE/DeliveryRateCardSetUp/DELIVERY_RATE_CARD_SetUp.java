@@ -19,7 +19,7 @@ public class DELIVERY_RATE_CARD_SetUp extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
-        login.LoginUpgrade();
+        login.LoginUpgrade(driver);
 
         //COM
         Thread.sleep(2000);

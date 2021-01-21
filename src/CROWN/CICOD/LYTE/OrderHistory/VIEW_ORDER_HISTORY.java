@@ -15,7 +15,7 @@ public class VIEW_ORDER_HISTORY extends TestBase {
     public void VIEW_ORDER_history() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);

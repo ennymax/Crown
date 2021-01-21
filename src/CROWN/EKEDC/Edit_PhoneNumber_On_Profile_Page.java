@@ -15,7 +15,7 @@ public class Edit_PhoneNumber_On_Profile_Page extends TestBase {
     public void EDIT_PHONE_NUMBER_ON_PROFILE_PAGE() throws IOException, InterruptedException {
         Login login = new Login(driver);
 
-        login.LoginEKEDC();
+        login.LoginEKEDC(driver);
 
         driver.findElement(By.xpath(Utility.fetchLocator("ProfileBTN_XPATH"))).click();
         driver.findElement(By.xpath(Utility.fetchLocator("EditProfile_XPATH"))).click();

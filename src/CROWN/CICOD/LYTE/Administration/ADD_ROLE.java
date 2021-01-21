@@ -21,7 +21,7 @@ public class ADD_ROLE extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 
-        login.LoginTestAccount();
+        login.LoginTestAccount(driver);
 
         //COM
         Thread.sleep(2000);
