@@ -1,4 +1,8 @@
-      allure serve
+
+ IWebElement element = driver.FindElement(By.Id("year"));
+ ((IJavaScriptExecutor)driver).ExecuteScript("var select = arguments[0]; for(var i = 0; i < select.options.length; i++){ if(select.options[i].text == arguments[1]){ select.options[i].selected = true; } }", element, "2017");
+
+ allure serve
 @Listeners(TestNgListeners.ListenersBlog.class)
 https://www.javacodegeeks.com/2019/06/testng-listeners-in-selenium-webdriver-examples.html
       08033987879

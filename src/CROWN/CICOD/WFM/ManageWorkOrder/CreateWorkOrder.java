@@ -57,32 +57,15 @@ public class CreateWorkOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("AddressLine1_XPATH"))).sendKeys(Utility.fetchLocator("AddressLine1_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("AddressLine2_XPATH"))).sendKeys(Utility.fetchLocator("AddressLine1_TEXT"));
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("cont_XPATH"))).click();
+        driver.findElement(By.xpath("//form[@id='bank-form']/div[11]/div/div/button/span")).click();
+        driver.findElement(By.xpath("//form[@id='bank-form']/div[11]/div/div/div/ul/li[7]/a/span")).click();
+        new Select(driver.findElement(By.id("country"))).selectByVisibleText("Nigeria");
 
         ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DoscrolltoViewClickFluentWait(driver,"cont_XPATH", 20);
-        excelUtil.DoSelectValuesByIndex(driver,"cont_XPATH",5,20);
-        excelUtil.DoclickWhenReady(driver,"niger_XPATH", 20);
-        javaScriptUtil.DoClickFluentwaitJS(driver,"niger_XPATH", 30);
-
-        Thread.sleep(999999999);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("city_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.sendKeys(randomStuff.ListRandom());
 
         Thread.sleep(2000);
-        WebElement ele11lg = driver.findElement(By.xpath(Utility.fetchLocator("WorkOrderRegion_XPATH")));
-        Select sel1lg = new Select(ele11lg);
-        sel1lg.selectByIndex(1);
+        excelUtil.DoSelectValuesByIndex(driver, "Priority_XPATH", 2, 20);
 
-        Thread.sleep(2000);
-        WebElement ele11l = driver.findElement(By.xpath(Utility.fetchLocator("Priority_XPATH")));
-        Select sel1l = new Select(ele11l);
-        sel1l.selectByIndex(1);
-
-        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateBtn_XPATH"))).click();
 
         Thread.sleep(2000);

@@ -96,7 +96,7 @@ public class Suspend_UnSuspendBuyer extends TestBase {
     @Description("GET")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 9)
-    public void GET() throws IOException, InterruptedException {
+    public void  GET() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.navigate().to("https://www.cicod.com/login");
         login.LoginDefault(driver);
