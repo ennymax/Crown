@@ -1,8 +1,8 @@
 <suite name="Suite">
     <test name = "Parallel Tests" parallel = "methods" thread-count = "3" group-by-instances="false" >
         <classes>
-            <class name="CROWN.CICOD.IMS.Audit.DownloadAuditList"/>
-            <class name="CROWN.CICOD.IMS.Audit.ViewAuditListPage"/>
+            <class name="CROWN.CICOD.IMS.DownloadAuditList"/>
+            <class name="CROWN.CICOD.IMS.ViewAuditListPage"/>
 
             <class name="CROWN.CICOD.IMS.BinCard.ViewBinCard"/>
 

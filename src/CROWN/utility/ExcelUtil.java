@@ -6,16 +6,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
-import java.awt.*;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
+
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
-import static org.testng.AssertJUnit.assertEquals;
 
 public class ExcelUtil extends TestBase {
 
@@ -50,7 +46,7 @@ public class ExcelUtil extends TestBase {
 
     //**********************Send Keys ********************
 
-    public void DosendKeysRandomNumberFluentWait(WebDriver driver, String locator, int span, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeysRandomNumberFluentWait(WebDriver driver, String locator, int span, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         SecureRandom rn = new SecureRandom();
         int resourcetype = rn.nextInt(span) + 1;
@@ -62,7 +58,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(a + resourcetype);
     }
 
-    public void DosendKeysRandomEmailsFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeysRandomEmailsFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         ExcelUtil excelUtil = new ExcelUtil(driver);
         excelUtil.DowaitForElementWithFluentWait(driver, locator, timeOut);
@@ -73,7 +69,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(randomstuff.ListRandom() + a);
     }
 
-    public void DosendKeyRRFluentWait(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeyRRFluentWait(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         ExcelUtil excelUtil = new ExcelUtil(driver);
         excelUtil.DowaitForElementWithFluentWait(driver, locator, timeOut);
@@ -82,7 +78,7 @@ public class ExcelUtil extends TestBase {
         mcj.sendKeys(actualText);
     }
 
-    public void DoSendKeysFluentWait(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
+    public static void DoSendKeysFluentWait(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         ExcelUtil excelUtil = new ExcelUtil(driver);
         excelUtil.DowaitForElementWithFluentWait(driver, locator, timeOut);
@@ -91,7 +87,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(Utility.fetchLocator(actualText));
     }
 
-    public void DosendKeysRandomListwordsFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeysRandomListwordsFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         Randomstuff randomstuff = new Randomstuff();
         ExcelUtil excelUtil = new ExcelUtil(driver);
@@ -102,7 +98,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(a + randomstuff.ListRandom());
     }
 
-    public void DosendKeyRRWhenReady(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeyRRWhenReady(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement mcj = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
@@ -110,7 +106,7 @@ public class ExcelUtil extends TestBase {
         mcj.sendKeys(actualText);
     }
 
-    public void DoClearActionclassWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DoClearActionclassWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
@@ -118,7 +114,7 @@ public class ExcelUtil extends TestBase {
         ac.sendKeys((locat), Keys.DELETE ).perform();
     }
 
-    public void DoSendKeysWhenReady(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
+    public static void DoSendKeysWhenReady(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
@@ -126,7 +122,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(Utility.fetchLocator(actualText));
     }
 
-    public void DoSendKeysWhenReadyEnter(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
+    public static void DoSendKeysWhenReadyEnter(WebDriver driver, String locator, String actualText, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
@@ -134,7 +130,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(Utility.fetchLocator(actualText) + Keys.ENTER + Keys.ENTER + Keys.ENTER );
     }
 
-    public void DosendKeysRandomEmailsWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeysRandomEmailsWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         Randomstuff randomstuff = new Randomstuff();
@@ -144,7 +140,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(randomstuff.ListRandom() + a );
     }
 
-    public void DosendKeysRandomNumberWhenReady(WebDriver driver, String locator, int span, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeysRandomNumberWhenReady(WebDriver driver, String locator, int span, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         SecureRandom rn = new SecureRandom();
         int resourcetype = rn.nextInt(span) + 1;
@@ -155,7 +151,7 @@ public class ExcelUtil extends TestBase {
         element.sendKeys(a + resourcetype);
     }
 
-    public void DosendKeysRandomListwordsWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DosendKeysRandomListwordsWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         Randomstuff randomstuff = new Randomstuff();
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -166,7 +162,7 @@ public class ExcelUtil extends TestBase {
     }
 
     //**********************Special ********************
-    public void DoFileUpWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DoFileUpWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(3200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -177,14 +173,8 @@ public class ExcelUtil extends TestBase {
         builder.moveToElement(element).click().build().perform();
     }
 
-    public void DoswitchtoframeWhenReady(int frameIndex, int sleepindex ) throws IOException, InterruptedException {
-        Thread.sleep(sleepindex);
-        driver.switchTo().frame(frameIndex);
-    }
-
     //**********************Clicks ********************
-
-    public void DoscrolltoViewClickFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DoscrolltoViewClickFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         DowaitForElementWithFluentWait(driver, locator, timeOut);
@@ -194,7 +184,7 @@ public class ExcelUtil extends TestBase {
         ti11.click();
     }
 
-    public void DoclickFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DoclickFluentWait(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         DowaitForElementWithFluentWait(driver, locator, timeOut);
@@ -202,14 +192,14 @@ public class ExcelUtil extends TestBase {
         element.click();
     }
 
-    public void DoclickWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DoclickWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
         element.click();
     }
 
-    public void DoscrolltoViewClickWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static void DoscrolltoViewClickWhenReady(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -219,16 +209,82 @@ public class ExcelUtil extends TestBase {
         ti11.click();
     }
 
-    //**********************Assertion********************
-    public void DoAssertEqualWhenReady(WebDriver driver, String locator, String assertionString, int timeOut) throws IOException, InterruptedException {
+    //********************drop down utils **************************
+    public static void DoSelectValuesByVisibleTextLinkText(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement msg11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        WebElement locat = driver.findElement(By.linkText(Utility.fetchLocator(locator)));
+        Select select = new Select(locat);
+        select.selectByVisibleText(Utility.fetchLocator(value));
     }
 
-    //********************drop down utils **************************
-    public void DoSelectValuesByVisibleText(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
+    public static void DoSelectValuesByIndexLinkText(WebDriver driver, String locator, int index, int timeOut) throws IOException, InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText(Utility.fetchLocator(locator)))));
+        Select select = new Select(locat);
+        select.selectByIndex(index);
+    }
+
+    public static void DoSelectValuesByIndexRandomLinkText(WebDriver driver, String locator, int Range, int timeOut) throws IOException, InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Thread.sleep(1200);
+        SecureRandom rn = new SecureRandom();
+        int stt = rn.nextInt(Range) + 1;
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText(Utility.fetchLocator(locator)))));        Select select = new Select(locat);
+        select.selectByIndex(stt);
+    }
+
+    public static void DoSelectValuesByValueLinkText(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Thread.sleep(1200);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText(Utility.fetchLocator(locator)))));
+        Select select = new Select(locat);
+        select.selectByValue(Utility.fetchLocator(value));
+    }
+
+
+
+    public static void DoSelectValuesByVisibleTextName(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1200);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        WebElement locat = driver.findElement(By.name(Utility.fetchLocator(locator)));
+        Select select = new Select(locat);
+        select.selectByVisibleText(Utility.fetchLocator(value));
+    }
+
+    public static void DoSelectValuesByIndexName(WebDriver driver, String locator, int index, int timeOut) throws IOException, InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name(Utility.fetchLocator(locator)))));
+        Select select = new Select(locat);
+        select.selectByIndex(index);
+    }
+
+    public static void DoSelectValuesByIndexRandomName(WebDriver driver, String locator, int Range, int timeOut) throws IOException, InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Thread.sleep(1200);
+        SecureRandom rn = new SecureRandom();
+        int stt = rn.nextInt(Range) + 1;
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name(Utility.fetchLocator(locator)))));        Select select = new Select(locat);
+        select.selectByIndex(stt);
+    }
+
+    public static void DoSelectValuesByValueName(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Thread.sleep(1200);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name(Utility.fetchLocator(locator)))));
+        Select select = new Select(locat);
+        select.selectByValue(Utility.fetchLocator(value));
+    }
+
+
+
+    public static void DoSelectValuesByVisibleText(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
@@ -236,7 +292,7 @@ public class ExcelUtil extends TestBase {
         select.selectByVisibleText(Utility.fetchLocator(value));
     }
 
-    public void DoSelectValuesByIndex(WebDriver driver, String locator, int index, int timeOut) throws IOException, InterruptedException {
+    public static void DoSelectValuesByIndex(WebDriver driver, String locator, int index, int timeOut) throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
@@ -244,7 +300,7 @@ public class ExcelUtil extends TestBase {
         select.selectByIndex(index);
     }
 
-    public void DoSelectValuesByIndexRandom(WebDriver driver, String locator, int Range, int timeOut) throws IOException, InterruptedException {
+    public static void DoSelectValuesByIndexRandom(WebDriver driver, String locator, int Range, int timeOut) throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Thread.sleep(1200);
         SecureRandom rn = new SecureRandom();
@@ -254,7 +310,7 @@ public class ExcelUtil extends TestBase {
         select.selectByIndex(stt);
     }
 
-    public void DoSelectValuesByValue(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
+    public static void DoSelectValuesByValue(WebDriver driver, String locator, String value, int timeOut) throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Thread.sleep(1200);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -263,23 +319,16 @@ public class ExcelUtil extends TestBase {
         select.selectByValue(Utility.fetchLocator(value));
     }
 
-    public String DoGetPageCurrentUrl(int timeOut, String urlValue) throws IOException, InterruptedException {
-        Thread.sleep(1200);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        wait.until(ExpectedConditions.urlContains(Utility.fetchLocator(urlValue)));
-        return driver.getCurrentUrl();
-    }
 
     //***************************wait utils ******************************
-    public WebElement DowaitForElementPresent(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static WebElement DowaitForElementPresent(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         return wait.until(ExpectedConditions.presenceOfElementLocated((By) driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
     }
 
-    public WebElement DowaitForElementToBeVisible(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static WebElement DowaitForElementToBeVisible(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
@@ -288,7 +337,7 @@ public class ExcelUtil extends TestBase {
     }
 
     //******************* FluentWait Utils ***********************
-    public WebElement DowaitForElementWithFluentWaitConcept(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
+    public static WebElement DowaitForElementWithFluentWaitConcept(WebDriver driver, String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
@@ -299,7 +348,7 @@ public class ExcelUtil extends TestBase {
         return wait.until(ExpectedConditions.presenceOfElementLocated((By) driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
     }
 
-    public WebElement DowaitForElementWithFluentWait(WebDriver driver, final String locator, int timeOut) throws IOException, InterruptedException {
+    public static WebElement DowaitForElementWithFluentWait(WebDriver driver, final String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
@@ -320,5 +369,5 @@ public class ExcelUtil extends TestBase {
 
         return element;
     }
-
 }
+

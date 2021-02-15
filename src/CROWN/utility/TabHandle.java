@@ -1,15 +1,16 @@
 package CROWN.utility;
 
+import CROWN.Base.TestBase;
 import org.openqa.selenium.WebDriver;
 
-public class TabHandle {
+public class TabHandle extends TestBase {
     WebDriver driver;
 
     public TabHandle(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void TabHandle() throws InterruptedException {
+    public static void TabHandle() throws InterruptedException {
         Thread.sleep(2000);
         String mjj = driver.getWindowHandle();
         System.out.println("The WindownHandle is " + mjj);
