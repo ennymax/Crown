@@ -12,7 +12,7 @@
             <class name="CROWN.CICOD.IMS.ManageInventry.ReceiveInventoryByInvoice"/>
             <class name="CROWN.CICOD.IMS.ManageInventry.UpdateInventory"/>
             <class name="CROWN.CICOD.IMS.ManageInventry.ViewReceivedInventory"/>
-            <class name="CROWN.CICOD.IMS.ManageInventry.ViewInventory"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.ViewItemsInventory"/>
 
             <class name="CROWN.CICOD.IMS.UpdateOfValue_I_and_QA.ApprovedSupply"/>
 
