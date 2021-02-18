@@ -1,7 +1,7 @@
 <suite name="Suite">
     <test name = "Parallel Tests" >
             <classes>
-            <class name="CROWN.CICOD.IMS.ManageCategory.NewInventryCategory"/>
+            <class name="CROWN.CICOD.IMS.ManageCategory.CreateInventoryCategory"/>
             <class name="CROWN.CICOD.IMS.ManageCategory.RemoveCategory"/>
             <class name="CROWN.CICOD.IMS.ManageCategory.Suspend_UnsuspendCategory"/>
             <class name="CROWN.CICOD.IMS.ManageCategory.UpdateInventoryCategory"/>

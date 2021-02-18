@@ -22,52 +22,6 @@ public class AddInventory extends TestBase {
 
     @Test
     public void ADD_INVENTORY_CATEGORY() throws IOException, InterruptedException {
-        test = extent.createTest("ADD INVENTORY");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        Login login = new Login(driver);
-        Randomstuff randomWords = new Randomstuff();
-
-        SecureRandom rn = new SecureRandom();
-        int role = rn.nextInt(11) + 1;
-        int role1 = rn.nextInt(100000) + 1;
-
-        login.LoginCorrectDetails(driver);
-
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
-        driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
-
-        Thread.sleep(2000);
-        WebElement element11 = driver.findElement(By.xpath(Utility.fetchLocator("InventoryBTN_XPATH")));
-        Actions action = new Actions(driver);
-        action.moveToElement(element11).click();
-
-        Thread.sleep(2000);
-        WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("InventoryBTN_XPATH")));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", element);
-
-        Thread.sleep(2000);
-        WebElement elementg = driver.findElement(By.xpath(Utility.fetchLocator("ManageInventry_XPATH")));
-        JavascriptExecutor jsg = (JavascriptExecutor) driver;
-        jsg.executeScript("arguments[0].click();", elementg);
-
-        Thread.sleep(2000);
-        WebElement element11s = driver.findElement(By.xpath(Utility.fetchLocator("AddNewInventryBTN_XPATH")));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element11s).click();
-
-        Thread.sleep(2000);
-        WebElement elementgg = driver.findElement(By.xpath(Utility.fetchLocator("AddNewInventryBTN_XPATH")));
-        JavascriptExecutor jsgg = (JavascriptExecutor) driver;
-        jsgg.executeScript("arguments[0].click();", elementgg);
 
         Thread.sleep(2000);
         WebElement ele1111 = driver.findElement(By.xpath(Utility.fetchLocator("CategoryAA_XPATH")));
