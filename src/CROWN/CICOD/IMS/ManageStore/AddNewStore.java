@@ -28,23 +28,7 @@ public class AddNewStore extends TestBase {
 
     @Test
     public void ADD_NEW() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("ADD NEW STORE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
 
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        Login login = new Login(driver);
-        Randomstuff randomWords = new Randomstuff();
-        Randomstuff randomWord = new Randomstuff();
-
-        login.LoginCorrectDetails(driver);
-
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
 
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 
