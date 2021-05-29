@@ -54,9 +54,7 @@ public class AddNewStore extends TestBase {
         jsL.executeScript("arguments[0].click();", elementL);
 
         Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("StoreName1_XPATH"))).sendKeys(Utility.fetchLocator("a_TEXT") +
-                .
-                        randomWord.ListRandom() + " " + randomWords.ListRandom());
+        driver.findElement(By.xpath(Utility.fetchLocator("StoreName1_XPATH"))).sendKeys(Utility.fetchLocator("a_TEXT") + randomWord.ListRandom() + " " + randomWords.ListRandom());
 
         Thread.sleep(2000);
         WebElement element11p = driver.findElement(By.xpath(Utility.fetchLocator("StoreEmail_XPATH")));
